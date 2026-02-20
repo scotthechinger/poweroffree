@@ -1,0 +1,2134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Power of Free — Worth Rises</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+/* ========================================
+   CSS CUSTOM PROPERTIES (DESIGN TOKENS)
+   ======================================== */
+:root {
+  /* Brand Colors */
+  --purple-deep: #3D0A5C;
+  --purple-mid: #5A1E82;
+  --purple-light: #7B3FA6;
+  --lavender: #E8E0FF;
+  --lavender-soft: #F3EEFF;
+  --lavender-faint: #F9F7FF;
+  --green-lime: #A8D400;
+  --green-soft: #E2F0C8;
+  --green-faint: #F2F8E8;
+  --red-accent: #FF4B33;
+  --black: #1A1A1A;
+  --gray-900: #2D2D2D;
+  --gray-700: #4A4A4A;
+  --gray-500: #7A7A7A;
+  --gray-300: #B0B0B0;
+  --gray-100: #F0F0F0;
+  --white: #FFFFFF;
+
+  /* Typography */
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+  --space-2xl: 6rem;
+  --space-3xl: 8rem;
+
+  /* Layout */
+  --max-width: 1200px;
+  --max-width-narrow: 800px;
+}
+
+/* ========================================
+   RESET & BASE
+   ======================================== */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--black);
+  background: var(--white);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ========================================
+   TYPOGRAPHY
+   ======================================== */
+h1, h2, h3 {
+  font-family: var(--font-display);
+  line-height: 1.15;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+}
+
+p {
+  font-size: 1.05rem;
+  color: var(--gray-700);
+}
+
+.label {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--purple-light);
+}
+
+/* ========================================
+   NAVIGATION
+   ======================================== */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  transition: all 0.3s ease;
+}
+
+nav.scrolled {
+  box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+}
+
+.nav-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-logo-mark {
+  width: 32px;
+  height: 32px;
+  background: var(--purple-deep);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-logo-mark span {
+  color: var(--green-lime);
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.nav-logo-text {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--black);
+  letter-spacing: -0.01em;
+}
+
+.nav-logo-text em {
+  font-style: normal;
+  color: var(--purple-deep);
+}
+
+.nav-links {
+  display: flex;
+  gap: var(--space-lg);
+  list-style: none;
+  align-items: center;
+}
+
+.nav-links a {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--gray-700);
+  transition: color 0.2s ease;
+  letter-spacing: 0.01em;
+}
+
+.nav-links a:hover {
+  color: var(--purple-deep);
+}
+
+.nav-cta {
+  background: var(--purple-deep);
+  color: var(--white) !important;
+  padding: 8px 20px;
+  border-radius: 100px;
+  font-size: 0.82rem !important;
+  font-weight: 600 !important;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.nav-cta:hover {
+  background: var(--purple-mid);
+  transform: translateY(-1px);
+}
+
+/* ========================================
+   HERO SECTION
+   ======================================== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--black);
+}
+
+.hero-video-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.hero-video-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(61, 10, 92, 0.55) 0%,
+    rgba(26, 26, 26, 0.7) 100%
+  );
+  z-index: 1;
+}
+
+/* Placeholder for ambient video — simulated with gradient + texture */
+.hero-video-placeholder {
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(ellipse at 30% 50%, rgba(168, 212, 0, 0.15) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 30%, rgba(232, 224, 255, 0.1) 0%, transparent 50%),
+    linear-gradient(160deg, #2D0845 0%, #3D0A5C 40%, #1A1A1A 100%);
+  animation: heroShift 20s ease-in-out infinite;
+}
+
+@keyframes heroShift {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.9; }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 900px;
+  padding: var(--space-lg);
+}
+
+.hero-eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--green-lime);
+  margin-bottom: var(--space-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.hero-eyebrow::before,
+.hero-eyebrow::after {
+  content: '';
+  width: 40px;
+  height: 1px;
+  background: rgba(168, 212, 0, 0.4);
+}
+
+.hero h1 {
+  color: var(--white);
+  margin-bottom: var(--space-md);
+  text-shadow: 0 2px 40px rgba(0,0,0,0.3);
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--green-lime);
+}
+
+.hero-subtitle {
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 600px;
+  margin: 0 auto var(--space-xl);
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+.hero-actions {
+  display: flex;
+  gap: var(--space-sm);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 32px;
+  border-radius: 100px;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  border: none;
+}
+
+.btn-primary {
+  background: var(--green-lime);
+  color: var(--black);
+}
+
+.btn-primary:hover {
+  background: #B5D332;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(168, 212, 0, 0.3);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+.btn-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* Play icon */
+.play-icon {
+  width: 18px;
+  height: 18px;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.play-icon::after {
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 6px solid currentColor;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  margin-left: 2px;
+}
+
+/* Scroll indicator */
+.hero-scroll {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  opacity: 0.5;
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+.hero-scroll span {
+  font-size: 0.7rem;
+  color: var(--white);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.scroll-line {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.6), transparent);
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.4; transform: translateX(-50%) translateY(0); }
+  50% { opacity: 0.7; transform: translateX(-50%) translateY(5px); }
+}
+
+/* ========================================
+   INTRODUCTION SECTION
+   ======================================== */
+.intro {
+  padding: var(--space-3xl) var(--space-lg);
+  background: var(--white);
+}
+
+.intro-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3xl);
+  align-items: start;
+}
+
+.intro-left .label {
+  margin-bottom: var(--space-md);
+  display: block;
+}
+
+.intro-left h2 {
+  color: var(--purple-deep);
+  margin-bottom: var(--space-lg);
+}
+
+.intro-left h2 em {
+  font-style: italic;
+  color: var(--purple-light);
+}
+
+.intro-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--gray-700);
+  margin-bottom: var(--space-lg);
+}
+
+.intro-text + .intro-text {
+  margin-top: calc(-1 * var(--space-sm));
+}
+
+.report-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--purple-deep);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 12px 0;
+  border-bottom: 2px solid var(--green-lime);
+  transition: all 0.2s ease;
+}
+
+.report-link:hover {
+  gap: 18px;
+  border-color: var(--purple-deep);
+}
+
+.report-link-arrow {
+  transition: transform 0.2s ease;
+}
+
+.report-link:hover .report-link-arrow {
+  transform: translateX(4px);
+}
+
+/* Stats */
+.intro-right {
+  padding-top: var(--space-lg);
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+}
+
+.stat-card {
+  padding: var(--space-lg);
+  border-radius: 16px;
+  background: var(--lavender-faint);
+  border: 1px solid rgba(232, 224, 255, 0.5);
+  transition: transform 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+}
+
+.stat-card:nth-child(2) {
+  background: var(--green-faint);
+  border-color: rgba(226, 240, 200, 0.5);
+}
+
+.stat-card:nth-child(3) {
+  background: var(--green-faint);
+  border-color: rgba(226, 240, 200, 0.5);
+}
+
+.stat-card:nth-child(4) {
+  background: var(--lavender-faint);
+  border-color: rgba(232, 224, 255, 0.5);
+}
+
+.stat-number {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  color: var(--purple-deep);
+  line-height: 1.1;
+  margin-bottom: var(--space-xs);
+}
+
+.stat-card:nth-child(2) .stat-number,
+.stat-card:nth-child(3) .stat-number {
+  color: #3D7A00;
+}
+
+.stat-description {
+  font-size: 0.85rem;
+  color: var(--gray-500);
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+/* ========================================
+   QUOTE CAROUSEL
+   ======================================== */
+.quote-carousel-section {
+  padding: var(--space-3xl) var(--space-lg);
+  background: var(--lavender-soft);
+  overflow: hidden;
+}
+
+.quote-carousel-inner {
+  max-width: var(--max-width-narrow);
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+}
+
+.quote-carousel-track {
+  position: relative;
+  min-height: 260px;
+}
+
+.quote-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  pointer-events: none;
+}
+
+.quote-slide.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  position: relative;
+}
+
+.quote-mark {
+  font-family: var(--font-display);
+  font-size: 4rem;
+  color: var(--purple-deep);
+  line-height: 0.5;
+  margin-bottom: var(--space-md);
+  opacity: 0.3;
+}
+
+.quote-text {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 2.5vw, 1.9rem);
+  color: var(--purple-deep);
+  line-height: 1.4;
+  margin-bottom: var(--space-lg);
+  font-style: italic;
+}
+
+.quote-attr {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  color: var(--gray-700);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.quote-attr-detail {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--gray-500);
+  font-weight: 400;
+}
+
+/* Carousel dots */
+.quote-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: var(--space-lg);
+}
+
+.quote-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--purple-deep);
+  opacity: 0.2;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  padding: 0;
+}
+
+.quote-dot.active {
+  opacity: 1;
+  transform: scale(1.2);
+  background: var(--purple-deep);
+}
+
+.quote-dot:hover {
+  opacity: 0.6;
+}
+
+/* Carousel progress bar */
+.quote-progress {
+  width: 100%;
+  height: 2px;
+  background: rgba(61, 10, 92, 0.1);
+  margin-top: var(--space-md);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.quote-progress-bar {
+  height: 100%;
+  background: var(--purple-deep);
+  border-radius: 2px;
+  width: 0%;
+  transition: width 0.1s linear;
+}
+
+/* ========================================
+   ISSUES / ACCORDION SECTION
+   ======================================== */
+.issues {
+  padding: var(--space-3xl) var(--space-lg);
+  background: var(--white);
+}
+
+.issues-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.issues-header {
+  max-width: 700px;
+  margin-bottom: var(--space-2xl);
+}
+
+.issues-header .label {
+  margin-bottom: var(--space-md);
+  display: block;
+}
+
+.issues-header h2 {
+  color: var(--purple-deep);
+  margin-bottom: var(--space-md);
+}
+
+.issues-header p {
+  font-size: 1.05rem;
+  color: var(--gray-500);
+  line-height: 1.7;
+}
+
+/* Accordion items */
+.accordion {
+  border-top: 1px solid var(--gray-100);
+}
+
+.accordion-item {
+  border-bottom: 1px solid var(--gray-100);
+  overflow: hidden;
+}
+
+.accordion-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-lg) 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-body);
+  text-align: left;
+  transition: all 0.2s ease;
+}
+
+.accordion-trigger:hover {
+  padding-left: 8px;
+}
+
+.accordion-trigger-left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.accordion-number {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--gray-300);
+  min-width: 28px;
+  transition: color 0.2s ease;
+}
+
+.accordion-item.active .accordion-number {
+  color: var(--green-lime);
+}
+
+.accordion-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  color: var(--black);
+  transition: color 0.2s ease;
+}
+
+.accordion-item.active .accordion-title {
+  color: var(--purple-deep);
+}
+
+.accordion-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--gray-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.accordion-item.active .accordion-icon {
+  background: var(--lavender);
+  transform: rotate(45deg);
+}
+
+.accordion-icon-bar {
+  position: relative;
+  width: 14px;
+  height: 2px;
+  background: var(--gray-500);
+  transition: background 0.2s ease;
+}
+
+.accordion-icon-bar::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(90deg);
+  width: 14px;
+  height: 2px;
+  background: var(--gray-500);
+  transition: opacity 0.3s ease;
+}
+
+.accordion-item.active .accordion-icon-bar::after {
+  opacity: 0;
+}
+
+.accordion-item.active .accordion-icon-bar {
+  background: var(--purple-deep);
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.accordion-item.active .accordion-content {
+  max-height: 800px;
+}
+
+.accordion-body {
+  padding-bottom: var(--space-xl);
+}
+
+.accordion-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  align-items: start;
+  padding-left: calc(28px + var(--space-md));
+}
+
+.accordion-text p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--gray-700);
+  margin-bottom: var(--space-md);
+}
+
+.accordion-text .highlight-stat {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: var(--purple-deep);
+  margin: var(--space-md) 0;
+  line-height: 1.2;
+}
+
+.accordion-text .highlight-stat span {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--gray-500);
+  display: block;
+  font-weight: 400;
+  margin-top: 4px;
+}
+
+/* Video placeholder in accordion */
+.accordion-video {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--black);
+  aspect-ratio: 16/9;
+}
+
+.video-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.video-placeholder-bg {
+  position: absolute;
+  inset: 0;
+  opacity: 0.7;
+}
+
+/* Different treatments for each video */
+.video-treatment-1 .video-placeholder-bg {
+  background: linear-gradient(135deg, #3D0A5C 0%, #5A1E82 50%, #A8D400 100%);
+}
+.video-treatment-2 .video-placeholder-bg {
+  background: linear-gradient(135deg, #2D0845 0%, #7B3FA6 60%, #E8E0FF 100%);
+}
+.video-treatment-3 .video-placeholder-bg {
+  background: linear-gradient(135deg, #3D0A5C 0%, #A8D400 50%, #E2F0C8 100%);
+}
+.video-treatment-4 .video-placeholder-bg {
+  background: linear-gradient(135deg, #5A1E82 0%, #3D0A5C 50%, #A8D400 100%);
+}
+.video-treatment-5 .video-placeholder-bg {
+  background: linear-gradient(135deg, #E8E0FF 0%, #3D0A5C 50%, #2D0845 100%);
+}
+.video-treatment-6 .video-placeholder-bg {
+  background: linear-gradient(135deg, #A8D400 0%, #3D0A5C 60%, #2D0845 100%);
+}
+.video-treatment-7 .video-placeholder-bg {
+  background: linear-gradient(135deg, #3D0A5C 0%, #E8E0FF 50%, #5A1E82 100%);
+}
+.video-treatment-8 .video-placeholder-bg {
+  background: linear-gradient(135deg, #2D0845 0%, #A8D400 40%, #3D0A5C 100%);
+}
+
+.video-play-btn {
+  position: relative;
+  z-index: 1;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.video-play-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.08);
+}
+
+.video-play-btn::after {
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 16px solid var(--white);
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  margin-left: 4px;
+}
+
+.video-duration {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  color: var(--white);
+  font-weight: 500;
+}
+
+.video-caption {
+  margin-top: var(--space-sm);
+  font-size: 0.8rem;
+  color: var(--gray-500);
+  font-style: italic;
+}
+
+/* ========================================
+   TAKE ACTION SECTION
+   ======================================== */
+.action {
+  padding: var(--space-3xl) var(--space-lg);
+  background: var(--purple-deep);
+  position: relative;
+  overflow: hidden;
+}
+
+.action::before {
+  content: '';
+  position: absolute;
+  top: -200px;
+  right: -200px;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(168, 212, 0, 0.08) 0%, transparent 70%);
+}
+
+.action::after {
+  content: '';
+  position: absolute;
+  bottom: -150px;
+  left: -150px;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(232, 224, 255, 0.06) 0%, transparent 70%);
+}
+
+.action-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.action-header {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto var(--space-2xl);
+}
+
+.action-header .label {
+  color: var(--green-lime);
+  margin-bottom: var(--space-md);
+  display: block;
+}
+
+.action-header h2 {
+  color: var(--white);
+  margin-bottom: var(--space-md);
+}
+
+.action-header p {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1.05rem;
+}
+
+.action-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+}
+
+.action-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: var(--space-xl) var(--space-lg);
+  transition: all 0.3s ease;
+}
+
+.action-card:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-4px);
+}
+
+.action-card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(168, 212, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-md);
+}
+
+.action-card-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--green-lime);
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.action-card h3 {
+  color: var(--white);
+  font-size: 1.3rem;
+  margin-bottom: var(--space-sm);
+}
+
+.action-card p {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.92rem;
+  line-height: 1.65;
+  margin-bottom: var(--space-md);
+}
+
+.action-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--green-lime);
+  font-weight: 600;
+  font-size: 0.88rem;
+  transition: gap 0.2s ease;
+}
+
+.action-card-link:hover {
+  gap: 14px;
+}
+
+/* ========================================
+   ABOUT SECTION
+   ======================================== */
+.about {
+  padding: var(--space-3xl) var(--space-lg);
+  background: var(--white);
+}
+
+.about-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3xl);
+  align-items: center;
+}
+
+.about-image {
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  position: relative;
+}
+
+.about-image-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--lavender) 0%, var(--green-soft) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-image-text {
+  font-size: 0.8rem;
+  color: var(--gray-500);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+.about-content .label {
+  margin-bottom: var(--space-md);
+  display: block;
+}
+
+.about-content h2 {
+  color: var(--purple-deep);
+  margin-bottom: var(--space-lg);
+}
+
+.about-content p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: var(--space-md);
+  color: var(--gray-700);
+}
+
+.about-logos {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xl);
+  margin-top: var(--space-xl);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--gray-100);
+}
+
+.about-logo-placeholder {
+  height: 36px;
+  padding: 0 var(--space-md);
+  background: var(--gray-100);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  color: var(--gray-500);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+footer {
+  padding: var(--space-xl) var(--space-lg);
+  background: var(--lavender-faint);
+  border-top: 1px solid rgba(232, 224, 255, 0.4);
+}
+
+.footer-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.footer-logo-mark {
+  width: 28px;
+  height: 28px;
+  background: var(--purple-deep);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-logo-mark span {
+  color: var(--green-lime);
+  font-family: var(--font-display);
+  font-size: 15px;
+}
+
+.footer-text {
+  font-size: 0.82rem;
+  color: var(--gray-500);
+}
+
+.footer-links {
+  display: flex;
+  gap: var(--space-lg);
+  list-style: none;
+}
+
+.footer-links a {
+  font-size: 0.82rem;
+  color: var(--gray-500);
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: var(--purple-deep);
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 900px) {
+  .intro-grid,
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  .stat-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .accordion-grid {
+    grid-template-columns: 1fr;
+    padding-left: 0;
+  }
+
+  .action-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    gap: var(--space-md);
+    text-align: center;
+  }
+
+  .quote-carousel-track {
+    min-height: 320px;
+  }
+}
+
+@media (max-width: 600px) {
+  .stat-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+  }
+
+  .quote-carousel-track {
+    min-height: 400px;
+  }
+}
+
+/* ========================================
+   SUBTLE ANIMATIONS
+   ======================================== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Selection color */
+::selection {
+  background: var(--lavender);
+  color: var(--purple-deep);
+}
+</style>
+</head>
+<body>
+
+<!-- ========================================
+     NAVIGATION
+     ======================================== -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <div class="nav-logo-mark"><span>W</span></div>
+      <div class="nav-logo-text"><em>Worth Rises</em></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#intro">About the Report</a></li>
+      <li><a href="#issues">Key Findings</a></li>
+      <li><a href="#action">Take Action</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#" class="nav-cta">Read the Report</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ========================================
+     HERO
+     ======================================== -->
+<section class="hero" id="hero">
+  <div class="hero-video-bg">
+    <div class="hero-video-placeholder"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Critical Connections</div>
+    <h1>The Power of <em>Free</em></h1>
+    <p class="hero-subtitle">
+      How free communication in prisons and jails is transforming lives,
+      strengthening families, and reshaping what justice can look like.
+    </p>
+    <div class="hero-actions">
+      <a href="#" class="btn btn-primary">
+        <span class="play-icon"></span>
+        Watch the Film
+      </a>
+      <a href="#" class="btn btn-secondary">
+        Read the Full Report &rarr;
+      </a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ========================================
+     INTRODUCTION
+     ======================================== -->
+<section class="intro" id="intro">
+  <div class="intro-inner">
+    <div class="intro-grid">
+      <div class="intro-left fade-in">
+        <span class="label">About the Report</span>
+        <h2>When calls are free, <em>everything</em> changes.</h2>
+        <p class="intro-text">
+          For decades, a $1.5 billion prison telecom industry has extracted wealth from
+          families who can least afford it — charging up to $0.325 per minute for a phone call
+          and costing families nearly $4,200 a year in incarceration-related expenses.
+          Black families have borne a disproportionate share, paying 2.5 times more
+          than white families for the same connection.
+        </p>
+        <p class="intro-text">
+          A growing movement has changed that. This report represents the first systematic
+          effort to document what happens when the cost barrier is removed: drawing on
+          quantitative data and in-depth qualitative interviews across multiple jurisdictions,
+          it presents direct evidence of the profound impact free communication has on
+          incarcerated people, their families, and the facilities that hold them.
+        </p>
+        <a href="#" class="report-link">
+          Read the full report
+          <span class="report-link-arrow">&rarr;</span>
+        </a>
+      </div>
+      <div class="intro-right fade-in">
+        <div class="stat-grid">
+          <div class="stat-card">
+            <div class="stat-number">330K+</div>
+            <div class="stat-description">Incarcerated people and loved ones now with access to free phone calls</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">$600M+</div>
+            <div class="stat-description">In combined savings from free communication policies nationwide</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">171%</div>
+            <div class="stat-description">Increase in call volume in Connecticut after implementation</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">88%</div>
+            <div class="stat-description">Of respondents identified building relationships as a major impact of free calls</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================
+     ROTATING QUOTE CAROUSEL
+     ======================================== -->
+<section class="quote-carousel-section" id="quotes">
+  <div class="quote-carousel-inner fade-in">
+    <div class="quote-carousel-track" id="quoteTrack">
+
+      <!-- Quote 1 -->
+      <div class="quote-slide active">
+        <div class="quote-mark">&ldquo;</div>
+        <p class="quote-text">
+          I felt more like I was being more prepared to come out to the free world
+          after 20 years of incarceration. It allowed me to feel like yes I missed
+          out on a lot but there's also so much out there for me to see and so I was
+          eager, like I was itching to get out so that I can experience these things.
+        </p>
+        <div class="quote-attr">Yannick Ortega</div>
+        <div class="quote-attr-detail">Formerly incarcerated, California</div>
+      </div>
+
+      <!-- Quote 2 -->
+      <div class="quote-slide">
+        <div class="quote-mark">&ldquo;</div>
+        <p class="quote-text">
+          My son was four months old when I was incarcerated. Having these free phone
+          calls allowed for me to build a stronger connection with my son. I was also
+          able to really build relationships with my nephews and nieces that were born
+          while I was inside. That is something that I wouldn't have been able to do
+          if we didn't have these free phone calls.
+        </p>
+        <div class="quote-attr">Elizabeth Lozano</div>
+        <div class="quote-attr-detail">Formerly incarcerated, California</div>
+      </div>
+
+      <!-- Quote 3 -->
+      <div class="quote-slide">
+        <div class="quote-mark">&ldquo;</div>
+        <p class="quote-text">
+          When the calls became free, it wasn't just a relief for me. It meant that
+          my son could talk to his dad without me worrying about how much it was
+          costing or how many minutes were left. That changed everything for us.
+        </p>
+        <div class="quote-attr">Nia</div>
+        <div class="quote-attr-detail">Wife of an incarcerated man, Massachusetts</div>
+      </div>
+
+      <!-- Quote 4 -->
+      <div class="quote-slide">
+        <div class="quote-mark">&ldquo;</div>
+        <p class="quote-text">
+          He feels more included in our lives. We can be at a family gathering, and
+          everybody has the opportunity to speak with him at that moment. You can hear
+          it in his voice. He sounds excited to be a part of something, to be here
+          with us, whether he may not be physically, but he's there with us, and
+          he's experiencing all these moments with us.
+        </p>
+        <div class="quote-attr">Angel Rice</div>
+        <div class="quote-attr-detail">Wife of an incarcerated man, California</div>
+      </div>
+
+      <!-- Quote 5 -->
+      <div class="quote-slide">
+        <div class="quote-mark">&ldquo;</div>
+        <p class="quote-text">
+          I think the prison system is designed to separate you from your family.
+          Free phone calls remind you that you're part of something more important
+          than yourself.
+        </p>
+        <div class="quote-attr">Sharpe</div>
+        <div class="quote-attr-detail">Formerly incarcerated, Massachusetts</div>
+      </div>
+
+      <!-- Quote 6 -->
+      <div class="quote-slide">
+        <div class="quote-mark">&ldquo;</div>
+        <p class="quote-text">
+          I've seen people who talked to their mother for the first time in years.
+          People who haven't talked to their brother in seven years. Now they get
+          to build their relationships with their siblings and their children.
+          You never know when someone can pass away.
+        </p>
+        <div class="quote-attr">Paulino Miranda</div>
+        <div class="quote-attr-detail">Currently incarcerated, Massachusetts</div>
+      </div>
+
+    </div>
+
+    <!-- Navigation dots -->
+    <div class="quote-dots" id="quoteDots">
+      <button class="quote-dot active" data-index="0" aria-label="Quote 1"></button>
+      <button class="quote-dot" data-index="1" aria-label="Quote 2"></button>
+      <button class="quote-dot" data-index="2" aria-label="Quote 3"></button>
+      <button class="quote-dot" data-index="3" aria-label="Quote 4"></button>
+      <button class="quote-dot" data-index="4" aria-label="Quote 5"></button>
+      <button class="quote-dot" data-index="5" aria-label="Quote 6"></button>
+    </div>
+
+    <!-- Progress bar -->
+    <div class="quote-progress">
+      <div class="quote-progress-bar" id="quoteProgress"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================
+     ISSUES / ACCORDION
+     ======================================== -->
+<section class="issues" id="issues">
+  <div class="issues-inner">
+    <div class="issues-header fade-in">
+      <span class="label">Key Findings</span>
+      <h2>Eight areas of measurable impact</h2>
+      <p>
+        Drawing on structured data and in-depth interviews across multiple jurisdictions,
+        the report identifies eight areas where free communication has produced
+        documented, meaningful change — for incarcerated people, their families,
+        and the systems that hold them.
+      </p>
+    </div>
+
+    <div class="accordion">
+
+      <!-- 1. Increased Connection -->
+      <div class="accordion-item active">
+        <button class="accordion-trigger" aria-expanded="true">
+          <div class="accordion-trigger-left">
+            <span class="accordion-number">01</span>
+            <span class="accordion-title">Increased Connection</span>
+          </div>
+          <div class="accordion-icon"><span class="accordion-icon-bar"></span></div>
+        </button>
+        <div class="accordion-content">
+          <div class="accordion-body">
+            <div class="accordion-grid">
+              <div class="accordion-text">
+                <p>
+                  When the cost barrier is removed, the most immediate change is simple:
+                  people talk more. In Connecticut, average phone usage surged from
+                  16.1 to 44.0 minutes per person per day — a 171% increase. In California,
+                  usage rose 67%, from 14.3 to 23.8 minutes per person, and continued
+                  climbing to 42.9 minutes as tablets rolled out system-wide.
+                </p>
+                <div class="highlight-stat">
+                  171% increase
+                  <span>in daily phone usage in Connecticut (16.1 to 44.0 minutes per person per day)</span>
+                </div>
+                <p>
+                  This isn't just a quantitative shift. More frequent contact means
+                  relationships can be maintained in real time — birthdays, school updates,
+                  crises, and everyday moments that sustain human bonds across prison walls.
+                </p>
+              </div>
+              <div>
+                <div class="accordion-video video-treatment-1">
+                  <div class="video-placeholder">
+                    <div class="video-placeholder-bg"></div>
+                    <div class="video-play-btn"></div>
+                    <div class="video-duration">1:12</div>
+                  </div>
+                </div>
+                <p class="video-caption">Increased Connection — Short documentary</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Financial Relief -->
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false">
+          <div class="accordion-trigger-left">
+            <span class="accordion-number">02</span>
+            <span class="accordion-title">Financial Relief</span>
+          </div>
+          <div class="accordion-icon"><span class="accordion-icon-bar"></span></div>
+        </button>
+        <div class="accordion-content">
+          <div class="accordion-body">
+            <div class="accordion-grid">
+              <div class="accordion-text">
+                <p>
+                  Families with incarcerated loved ones — disproportionately low-income
+                  communities and communities of color — have shouldered billions in
+                  communication costs. The prison telecom industry, a $1.5 billion sector
+                  controlled largely by three companies, has extracted wealth from families
+                  who can least afford it. One in three families goes into debt to stay
+                  connected, and women carry 87% of that burden.
+                </p>
+                <div class="highlight-stat">
+                  $120M saved annually
+                  <span>Estimated annual savings across all prisons and jails from free communications</span>
+                </div>
+                <p>
+                  In California alone, free calls save families nearly $35 million each year.
+                  Ninety percent of interview respondents described the financial impact of
+                  free calls as transformative — dollars that once went to telecom companies
+                  now go toward housing, food, and rebuilding lives.
+                </p>
+              </div>
+              <div>
+                <div class="accordion-video video-treatment-2">
+                  <div class="video-placeholder">
+                    <div class="video-placeholder-bg"></div>
+                    <div class="video-play-btn"></div>
+                    <div class="video-duration">1:08</div>
+                  </div>
+                </div>
+                <p class="video-caption">Financial Relief — Short documentary</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Stronger Relationships -->
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false">
+          <div class="accordion-trigger-left">
+            <span class="accordion-number">03</span>
+            <span class="accordion-title">Stronger Family &amp; Community Relationships</span>
+          </div>
+          <div class="accordion-icon"><span class="accordion-icon-bar"></span></div>
+        </button>
+        <div class="accordion-content">
+          <div class="accordion-body">
+            <div class="accordion-grid">
+              <div class="accordion-text">
+                <p>
+                  Free communication creates a fundamental shift from transactional to
+                  relational. When the constant calculation — whether connection is worth
+                  the cost — disappears, conversations become truly meaningful rather than
+                  rushed and rationed. People are able to participate in family celebrations,
+                  offer guidance through difficult moments, and maintain the emotional fabric
+                  that incarceration strains.
+                </p>
+                <div class="highlight-stat">
+                  88% of respondents
+                  <span>identified building and repairing relationships as a major impact of free calls</span>
+                </div>
+                <p>
+                  These slower, more conversational talks serve as a source of healing and
+                  hope — providing the kind of presence that sustains people through the
+                  hardships of separation.
+                </p>
+              </div>
+              <div>
+                <div class="accordion-video video-treatment-3">
+                  <div class="video-placeholder">
+                    <div class="video-placeholder-bg"></div>
+                    <div class="video-play-btn"></div>
+                    <div class="video-duration">1:15</div>
+                  </div>
+                </div>
+                <p class="video-caption">Family & Community — Short documentary</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Parenting & Child Development -->
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false">
+          <div class="accordion-trigger-left">
+            <span class="accordion-number">04</span>
+            <span class="accordion-title">Parenting &amp; Child Development</span>
+          </div>
+          <div class="accordion-icon"><span class="accordion-icon-bar"></span></div>
+        </button>
+        <div class="accordion-content">
+          <div class="accordion-body">
+            <div class="accordion-grid">
+              <div class="accordion-text">
+                <p>
+                  For children with incarcerated parents, phone calls are not a luxury — they
+                  are a necessity for healthy development and emotional security. When calls
+                  were costly, children experienced forced disconnection at critical moments
+                  in their lives. Free communications allow incarcerated parents to participate
+                  in homework help, school events, and daily check-ins that sustain the
+                  parental bond.
+                </p>
+                <div class="highlight-stat">
+                  Daily contact restored
+                  <span>Incarcerated parents can now speak with their children every day, not just when finances allow</span>
+                </div>
+                <p>
+                  The ability to maintain consistent parental presence — even across prison
+                  walls — has measurable impacts on child development, school performance,
+                  and the child's sense of security and belonging.
+                </p>
+              </div>
+              <div>
+                <div class="accordion-video video-treatment-4">
+                  <div class="video-placeholder">
+                    <div class="video-placeholder-bg"></div>
+                    <div class="video-play-btn"></div>
+                    <div class="video-duration">1:04</div>
+                  </div>
+                </div>
+                <p class="video-caption">Parenting & Child Development — Short documentary</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Rehabilitation -->
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false">
+          <div class="accordion-trigger-left">
+            <span class="accordion-number">05</span>
+            <span class="accordion-title">Rehabilitation</span>
+          </div>
+          <div class="accordion-icon"><span class="accordion-icon-bar"></span></div>
+        </button>
+        <div class="accordion-content">
+          <div class="accordion-body">
+            <div class="accordion-grid">
+              <div class="accordion-text">
+                <p>
+                  Free communication serves as a powerful rehabilitation tool. When
+                  incarcerated people maintain consistent contact with loved ones, they
+                  experience greater motivation to participate in educational and
+                  self-improvement programs. Hope itself becomes a catalyst for change —
+                  knowing there is a support network waiting creates tangible accountability.
+                </p>
+                <div class="highlight-stat">
+                  Higher program engagement
+                  <span>Maintained family connections correlate with increased participation in education and vocational programs</span>
+                </div>
+                <p>
+                  The ability to share achievements and personal growth with loved ones in
+                  real time reinforces positive changes and creates the kind of motivation
+                  that sustains transformation over years of incarceration.
+                </p>
+              </div>
+              <div>
+                <div class="accordion-video video-treatment-5">
+                  <div class="video-placeholder">
+                    <div class="video-placeholder-bg"></div>
+                    <div class="video-play-btn"></div>
+                    <div class="video-duration">1:10</div>
+                  </div>
+                </div>
+                <p class="video-caption">Rehabilitation — Short documentary</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. Reduced Violence -->
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false">
+          <div class="accordion-trigger-left">
+            <span class="accordion-number">06</span>
+            <span class="accordion-title">Reduced Violence &amp; Disciplinary Infractions</span>
+          </div>
+          <div class="accordion-icon"><span class="accordion-icon-bar"></span></div>
+        </button>
+        <div class="accordion-content">
+          <div class="accordion-body">
+            <div class="accordion-grid">
+              <div class="accordion-text">
+                <p>
+                  Facilities that have implemented free calling consistently report
+                  reductions in violent incidents and disciplinary infractions. Both staff
+                  and incarcerated people describe the change as immediate and palpable.
+                  When people have something to protect — a call with their child, a
+                  conversation with a partner — behavior changes.
+                </p>
+                <div class="highlight-stat">
+                  Safer facilities
+                  <span>Staff and incarcerated people report visibly reduced tension and fewer conflicts</span>
+                </div>
+                <p>
+                  The ability to talk to families reduces the stress and isolation that
+                  fuels violence. When people are no longer desperate about maintaining
+                  costly connections, they are less likely to engage in the behaviors that
+                  lead to disciplinary infractions — creating safer environments for
+                  everyone, including correctional officers.
+                </p>
+              </div>
+              <div>
+                <div class="accordion-video video-treatment-6">
+                  <div class="video-placeholder">
+                    <div class="video-placeholder-bg"></div>
+                    <div class="video-play-btn"></div>
+                    <div class="video-duration">1:06</div>
+                  </div>
+                </div>
+                <p class="video-caption">Reduced Violence — Short documentary</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. Mental & Physical Health -->
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false">
+          <div class="accordion-trigger-left">
+            <span class="accordion-number">07</span>
+            <span class="accordion-title">Improved Mental &amp; Physical Health</span>
+          </div>
+          <div class="accordion-icon"><span class="accordion-icon-bar"></span></div>
+        </button>
+        <div class="accordion-content">
+          <div class="accordion-body">
+            <div class="accordion-grid">
+              <div class="accordion-text">
+                <p>
+                  Isolation is a health crisis. Incarcerated people cut off from their
+                  families experience higher rates of depression, anxiety, and physical
+                  health deterioration. Free communication functions as a lifeline —
+                  providing the kind of human connection that is protective against
+                  the psychological toll of incarceration.
+                </p>
+                <div class="highlight-stat">
+                  75% of respondents
+                  <span>described emotional and mental health improvements from free calls</span>
+                </div>
+                <p>
+                  The mental health benefits extend to families as well, who experience
+                  relief from the constant financial and emotional strain of maintaining
+                  connections. Physical health also improves through reduced violence
+                  exposure and lower stress-related illness.
+                </p>
+              </div>
+              <div>
+                <div class="accordion-video video-treatment-7">
+                  <div class="video-placeholder">
+                    <div class="video-placeholder-bg"></div>
+                    <div class="video-play-btn"></div>
+                    <div class="video-duration">1:09</div>
+                  </div>
+                </div>
+                <p class="video-caption">Mental & Physical Health — Short documentary</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8. Reentry -->
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false">
+          <div class="accordion-trigger-left">
+            <span class="accordion-number">08</span>
+            <span class="accordion-title">Reentry Planning &amp; Success</span>
+          </div>
+          <div class="accordion-icon"><span class="accordion-icon-bar"></span></div>
+        </button>
+        <div class="accordion-content">
+          <div class="accordion-body">
+            <div class="accordion-grid">
+              <div class="accordion-text">
+                <p>
+                  People who maintain strong family connections during incarceration
+                  are far more likely to have stable housing, employment, and support
+                  upon release. Free communication allows reentry planning to begin
+                  before the prison door opens — securing housing, arranging employment,
+                  and maintaining relationships with mentors and family members who will
+                  support the transition home.
+                </p>
+                <div class="highlight-stat">
+                  Stronger networks
+                  <span>Maintained connections are the leading predictor of successful reentry and reduced recidivism</span>
+                </div>
+                <p>
+                  The bonds built through consistent, free communication during
+                  incarceration become the foundation for successful community
+                  reintegration — turning the moment of release from a crisis
+                  into a homecoming.
+                </p>
+              </div>
+              <div>
+                <div class="accordion-video video-treatment-8">
+                  <div class="video-placeholder">
+                    <div class="video-placeholder-bg"></div>
+                    <div class="video-play-btn"></div>
+                    <div class="video-duration">1:11</div>
+                  </div>
+                </div>
+                <p class="video-caption">Reentry Planning — Short documentary</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========================================
+     TAKE ACTION
+     ======================================== -->
+<section class="action" id="action">
+  <div class="action-inner">
+    <div class="action-header fade-in">
+      <span class="label">Take Action</span>
+      <h2>Connection shouldn't cost a thing.</h2>
+      <p>
+        The evidence is clear. Free communication saves families, strengthens communities,
+        improves safety, and reduces recidivism. Here's how you can help make it the standard everywhere.
+      </p>
+    </div>
+    <div class="action-grid">
+      <div class="action-card fade-in">
+        <div class="action-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </div>
+        <h3>Read &amp; share the report</h3>
+        <p>
+          Download the full report and share it with your network, your elected officials,
+          and anyone who needs to see what the evidence shows.
+        </p>
+        <a href="#" class="action-card-link">Download the report &rarr;</a>
+      </div>
+      <div class="action-card fade-in">
+        <div class="action-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <h3>Contact your legislators</h3>
+        <p>
+          Free prison communication is advancing state by state. Connecticut, California,
+          Massachusetts, Minnesota, and New York have led the way. Find out where your
+          state stands and make your voice heard.
+        </p>
+        <a href="#" class="action-card-link">Find your representative &rarr;</a>
+      </div>
+      <div class="action-card fade-in">
+        <div class="action-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3>Support the movement</h3>
+        <p>
+          Worth Rises and allies across the country are working to end the prison
+          telecom industry's exploitation of incarcerated communities. Join them.
+        </p>
+        <a href="#" class="action-card-link">Get involved &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================
+     ABOUT
+     ======================================== -->
+<section class="about" id="about">
+  <div class="about-inner">
+    <div class="about-grid">
+      <div class="about-image fade-in">
+        <div class="about-image-placeholder">
+          <span class="about-image-text">[ PHOTOGRAPH ]</span>
+        </div>
+      </div>
+      <div class="about-content fade-in">
+        <span class="label">About This Project</span>
+        <h2>Critical Connections</h2>
+        <p>
+          <em>The Power of Free</em> is a project of Worth Rises, a non-profit
+          organization dedicated to dismantling the prison industry and ending
+          the exploitation of those it touches.
+        </p>
+        <p>
+          This report and the accompanying films were produced in partnership with
+          directly impacted communities — the people whose lives are shaped by these
+          policies and whose voices are central to this work.
+        </p>
+        <p>
+          The research, interviews, and data in this project reflect years of advocacy,
+          scholarship, and on-the-ground organizing by families, advocates, and
+          researchers committed to a more just system.
+        </p>
+        <div class="about-logos">
+          <div class="about-logo-placeholder">WORTH RISES</div>
+          <div class="about-logo-placeholder">PARTNER ORG</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================
+     FOOTER
+     ======================================== -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-left">
+      <div class="footer-logo-mark"><span>W</span></div>
+      <span class="footer-text">&copy; 2025 Worth Rises. All rights reserved.</span>
+    </div>
+    <ul class="footer-links">
+      <li><a href="#">Privacy Policy</a></li>
+      <li><a href="#">worthrises.org</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </div>
+</footer>
+
+<!-- ========================================
+     JAVASCRIPT
+     ======================================== -->
+<script>
+// Accordion
+document.querySelectorAll('.accordion-trigger').forEach(trigger => {
+  trigger.addEventListener('click', () => {
+    const item = trigger.closest('.accordion-item');
+    const wasActive = item.classList.contains('active');
+
+    // Close all
+    document.querySelectorAll('.accordion-item').forEach(i => {
+      i.classList.remove('active');
+      i.querySelector('.accordion-trigger').setAttribute('aria-expanded', 'false');
+    });
+
+    // Toggle clicked
+    if (!wasActive) {
+      item.classList.add('active');
+      trigger.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
+
+// Nav scroll effect
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 50) {
+    nav.classList.add('scrolled');
+  } else {
+    nav.classList.remove('scrolled');
+  }
+});
+
+// Fade-in on scroll
+const fadeEls = document.querySelectorAll('.fade-in');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+fadeEls.forEach(el => observer.observe(el));
+
+// ========================================
+// QUOTE CAROUSEL
+// ========================================
+(function() {
+  const slides = document.querySelectorAll('.quote-slide');
+  const dots = document.querySelectorAll('.quote-dot');
+  const progressBar = document.getElementById('quoteProgress');
+  const totalSlides = slides.length;
+  let currentIndex = 0;
+  let intervalId = null;
+  let progressId = null;
+  let progressWidth = 0;
+  const SLIDE_DURATION = 8000; // 8 seconds per quote
+  const PROGRESS_STEP = 50; // update every 50ms
+
+  function goToSlide(index) {
+    // Remove active from all
+    slides.forEach(s => s.classList.remove('active'));
+    dots.forEach(d => d.classList.remove('active'));
+
+    // Set new active
+    currentIndex = index;
+    slides[currentIndex].classList.add('active');
+    dots[currentIndex].classList.add('active');
+
+    // Reset progress
+    progressWidth = 0;
+    progressBar.style.width = '0%';
+  }
+
+  function nextSlide() {
+    goToSlide((currentIndex + 1) % totalSlides);
+  }
+
+  function startAutoplay() {
+    stopAutoplay();
+    intervalId = setInterval(nextSlide, SLIDE_DURATION);
+    progressId = setInterval(() => {
+      progressWidth += (PROGRESS_STEP / SLIDE_DURATION) * 100;
+      if (progressWidth > 100) progressWidth = 100;
+      progressBar.style.width = progressWidth + '%';
+    }, PROGRESS_STEP);
+  }
+
+  function stopAutoplay() {
+    if (intervalId) clearInterval(intervalId);
+    if (progressId) clearInterval(progressId);
+    intervalId = null;
+    progressId = null;
+  }
+
+  // Dot click handlers
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      const index = parseInt(dot.getAttribute('data-index'), 10);
+      goToSlide(index);
+      startAutoplay(); // restart timer
+    });
+  });
+
+  // Pause on hover
+  const carouselSection = document.querySelector('.quote-carousel-section');
+  carouselSection.addEventListener('mouseenter', stopAutoplay);
+  carouselSection.addEventListener('mouseleave', startAutoplay);
+
+  // Start
+  startAutoplay();
+})();
+</script>
+
+</body>
+</html>
