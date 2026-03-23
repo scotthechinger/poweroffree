@@ -1462,8 +1462,8 @@ footer {
 .case-study-expanded {
   display: none;
   grid-column: 1 / -1;
-  background: linear-gradient(160deg, rgba(90, 30, 130, 0.6), rgba(61, 10, 92, 0.8));
-  border: 1px solid rgba(168, 212, 0, 0.3);
+  background: #5c2d82;
+  border: 1px solid rgba(168, 212, 0, 0.4);
   border-radius: 12px;
   padding: 48px 40px;
   margin-top: 20px;
@@ -1502,6 +1502,7 @@ footer {
   font-family: var(--font-display);
   font-size: 32px;
   font-weight: 400;
+  color: #fff;
 }
 
 .case-study-expanded-year {
@@ -1541,8 +1542,8 @@ footer {
   gap: 32px;
   margin-bottom: 32px;
   padding: 28px 0;
-  border-top: 1px solid rgba(168, 212, 0, 0.2);
-  border-bottom: 1px solid rgba(168, 212, 0, 0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .case-study-expanded-stat {
@@ -1560,13 +1561,18 @@ footer {
 
 .case-study-expanded-stat-label {
   font-size: 0.9rem;
-  color: rgba(255,255,255,0.9);
+  color: #fff;
   line-height: 1.5;
 }
 
 .case-study-expanded-narrative {
-  font-size: 1.05rem;
-  line-height: 1.8;
+  font-size: 1.1rem;
+  line-height: 1.85;
+  color: #fff;
+  font-weight: 400;
+}
+
+.case-study-expanded-narrative p {
   color: #fff;
 }
 
@@ -1578,8 +1584,15 @@ footer {
   font-family: var(--font-display);
   font-style: italic;
   font-size: 1.1rem;
-  color: rgba(255,255,255,0.8);
+  color: #e8e0ff !important;
   margin-bottom: 24px;
+}
+
+/* Override base p color inside expanded panels */
+.case-study-expanded p,
+.case-study-expanded .case-study-expanded-stat-label,
+.case-study-expanded .case-study-tagline-expanded {
+  color: #fff;
 }
 
 /* Responsive */
