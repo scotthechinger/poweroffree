@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Power of Free — Worth Rises</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&amp;family=DM+Serif+Display:ital@0;1&amp;display=swap" rel="stylesheet">
 <style>
 /* ========================================
    CSS CUSTOM PROPERTIES (DESIGN TOKENS)
@@ -1307,6 +1306,292 @@ footer {
   background: var(--lavender);
   color: var(--purple-deep);
 }
+
+/* Accordion pull quotes */
+.accordion-quote {
+  border-left: 4px solid var(--green-lime);
+  padding-left: 20px;
+  margin: 24px 0;
+  font-style: italic;
+  color: var(--gray-700);
+  line-height: 1.8;
+}
+
+.accordion-quote p {
+  margin: 0 0 12px 0;
+  font-size: 1rem;
+}
+
+.accordion-quote cite {
+  display: block;
+  font-style: normal;
+  font-size: 0.9rem;
+  color: var(--gray-500);
+  font-weight: 500;
+}
+
+/* ========================================
+   CASE STUDIES SECTION
+   ======================================== */
+.case-studies {
+  background: var(--purple-deep);
+  color: var(--white);
+  padding: var(--space-3xl) var(--space-lg);
+}
+
+.case-studies-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.case-studies-header {
+  text-align: center;
+  margin-bottom: var(--space-3xl);
+}
+
+.case-studies-label {
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--green-lime);
+  margin-bottom: 12px;
+}
+
+.case-studies-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: var(--space-xl);
+}
+
+.case-studies-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: var(--space-3xl);
+}
+
+.case-study-card {
+  background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+  border: 1px solid rgba(168, 212, 0, 0.2);
+  border-radius: 12px;
+  padding: 32px 24px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.case-study-card:hover {
+  border-color: rgba(168, 212, 0, 0.5);
+  background: linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0.05));
+  transform: translateY(-4px);
+}
+
+.case-study-card.active {
+  border-color: var(--green-lime);
+  background: linear-gradient(135deg, rgba(168, 212, 0, 0.15), rgba(168, 212, 0, 0.05));
+}
+
+.case-study-year {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--green-lime);
+  margin-bottom: 12px;
+}
+
+.case-study-state {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 400;
+  margin-bottom: 12px;
+  line-height: 1.1;
+}
+
+.case-study-tagline {
+  font-size: 0.95rem;
+  font-style: italic;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 20px;
+}
+
+.case-study-hero-stat {
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid rgba(168, 212, 0, 0.2);
+}
+
+.case-study-hero-number {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--green-lime);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.case-study-hero-label {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.4;
+}
+
+.case-study-cta {
+  margin-top: 16px;
+  font-size: 0.85rem;
+  color: var(--green-lime);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: gap 0.2s;
+}
+
+.case-study-card:hover .case-study-cta {
+  gap: 12px;
+}
+
+.case-study-cta-arrow {
+  transition: transform 0.3s;
+}
+
+.case-study-card.active .case-study-cta-arrow {
+  transform: rotate(90deg);
+}
+
+/* Expanded detail panel */
+.case-study-expanded {
+  display: none;
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+  border: 1px solid rgba(168, 212, 0, 0.2);
+  border-radius: 12px;
+  padding: 48px 40px;
+  margin-top: 20px;
+  animation: slideDown 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.case-study-expanded.visible {
+  display: block;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.case-study-expanded-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 32px;
+}
+
+.case-study-expanded-title {
+  display: flex;
+  gap: 16px;
+  align-items: baseline;
+}
+
+.case-study-expanded-state {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 400;
+}
+
+.case-study-expanded-year {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--green-lime);
+  background: rgba(168, 212, 0, 0.12);
+  padding: 4px 12px;
+  border-radius: 12px;
+  white-space: nowrap;
+}
+
+.case-study-close-btn {
+  background: rgba(255,255,255,0.1);
+  border: none;
+  color: var(--white);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+
+.case-study-close-btn:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.case-study-expanded-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-bottom: 32px;
+  padding: 28px 0;
+  border-top: 1px solid rgba(168, 212, 0, 0.2);
+  border-bottom: 1px solid rgba(168, 212, 0, 0.2);
+}
+
+.case-study-expanded-stat {
+  text-align: center;
+}
+
+.case-study-expanded-stat-number {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--green-lime);
+  margin-bottom: 8px;
+  line-height: 1;
+}
+
+.case-study-expanded-stat-label {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.5;
+}
+
+.case-study-expanded-narrative {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.85);
+}
+
+.case-study-expanded-narrative p + p {
+  margin-top: 16px;
+}
+
+.case-study-tagline-expanded {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 24px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .case-studies-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .case-study-expanded-stats {
+    grid-template-columns: 1fr;
+  }
+}
 </style>
 </head>
 <body>
@@ -1314,7 +1599,7 @@ footer {
 <!-- ========================================
      NAVIGATION
      ======================================== -->
-<nav id="nav">
+<nav id="nav" >
   <div class="nav-inner">
     <a href="#" class="nav-logo">
       <div class="nav-logo-mark"><span>W</span></div>
@@ -1322,7 +1607,7 @@ footer {
     </a>
     <ul class="nav-links">
       <li><a href="#intro">About the Report</a></li>
-      <li><a href="#issues">Key Findings</a></li>
+      <li><a href="#case-studies">Case Studies</a></li>
       <li><a href="#action">Take Action</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#" class="nav-cta">Read the Report</a></li>
@@ -1350,7 +1635,7 @@ footer {
         Watch the Film
       </a>
       <a href="#" class="btn btn-secondary">
-        Read the Full Report &rarr;
+        Read the Full Report →
       </a>
     </div>
   </div>
@@ -1366,12 +1651,12 @@ footer {
 <section class="intro" id="intro">
   <div class="intro-inner">
     <div class="intro-grid">
-      <div class="intro-left fade-in">
+      <div class="intro-left fade-in visible">
         <span class="label">About the Report</span>
         <h2>When calls are free, <em>everything</em> changes.</h2>
         <p class="intro-text">
           For decades, a $1.5 billion prison telecom industry has extracted wealth from
-          families who can least afford it — charging up to $0.325 per minute for a phone call
+          families who can least afford it — charging exorbitant rates for a phone call
           and costing families nearly $4,200 a year in incarceration-related expenses.
           Black families have borne a disproportionate share, paying 2.5 times more
           than white families for the same connection.
@@ -1385,10 +1670,10 @@ footer {
         </p>
         <a href="#" class="report-link">
           Read the full report
-          <span class="report-link-arrow">&rarr;</span>
+          <span class="report-link-arrow">→</span>
         </a>
       </div>
-      <div class="intro-right fade-in">
+      <div class="intro-right fade-in visible">
         <div class="stat-grid">
           <div class="stat-card">
             <div class="stat-number">330K+</div>
@@ -1399,12 +1684,12 @@ footer {
             <div class="stat-description">In combined savings from free communication policies nationwide</div>
           </div>
           <div class="stat-card">
-            <div class="stat-number">171%</div>
-            <div class="stat-description">Increase in call volume in Connecticut after implementation</div>
+            <div class="stat-number">104%</div>
+            <div class="stat-description">Increase in call volume across all prison systems studied</div>
           </div>
           <div class="stat-card">
-            <div class="stat-number">88%</div>
-            <div class="stat-description">Of respondents identified building relationships as a major impact of free calls</div>
+            <div class="stat-number">93%</div>
+            <div class="stat-description">Of incarcerated people identified building relationships as a major impact of free calls</div>
           </div>
         </div>
       </div>
@@ -1416,43 +1701,34 @@ footer {
      ROTATING QUOTE CAROUSEL
      ======================================== -->
 <section class="quote-carousel-section" id="quotes">
-  <div class="quote-carousel-inner fade-in">
+  <div class="quote-carousel-inner fade-in visible">
     <div class="quote-carousel-track" id="quoteTrack">
 
       <!-- Quote 1 -->
       <div class="quote-slide active">
-        <div class="quote-mark">&ldquo;</div>
+        <div class="quote-mark">"</div>
         <p class="quote-text">
-          I felt more like I was being more prepared to come out to the free world
-          after 20 years of incarceration. It allowed me to feel like yes I missed
-          out on a lot but there's also so much out there for me to see and so I was
-          eager, like I was itching to get out so that I can experience these things.
+          I literally raised my daughter on the phone. To have free calls now — it's more than what I think people realize. It's our lifeline to the world. Our lifeline to our families.
         </p>
-        <div class="quote-attr">Yannick Ortega</div>
-        <div class="quote-attr-detail">Formerly incarcerated, California</div>
+        <div class="quote-attr">Michael Tineo</div>
+        <div class="quote-attr-detail">Currently incarcerated, Connecticut</div>
       </div>
 
       <!-- Quote 2 -->
       <div class="quote-slide">
-        <div class="quote-mark">&ldquo;</div>
+        <div class="quote-mark">"</div>
         <p class="quote-text">
-          My son was four months old when I was incarcerated. Having these free phone
-          calls allowed for me to build a stronger connection with my son. I was also
-          able to really build relationships with my nephews and nieces that were born
-          while I was inside. That is something that I wouldn't have been able to do
-          if we didn't have these free phone calls.
+          Daddy, guess what — I'm going to get to call you every day now. And he was like, 'What?!' And I was like, so the phone calls are free now.
         </p>
-        <div class="quote-attr">Elizabeth Lozano</div>
-        <div class="quote-attr-detail">Formerly incarcerated, California</div>
+        <div class="quote-attr">Lacey Spears</div>
+        <div class="quote-attr-detail">Currently incarcerated, Connecticut</div>
       </div>
 
       <!-- Quote 3 -->
       <div class="quote-slide">
-        <div class="quote-mark">&ldquo;</div>
+        <div class="quote-mark">"</div>
         <p class="quote-text">
-          When the calls became free, it wasn't just a relief for me. It meant that
-          my son could talk to his dad without me worrying about how much it was
-          costing or how many minutes were left. That changed everything for us.
+          When the calls became free, it wasn't just a relief for me. It meant that my son could talk to his dad without me worrying about how much it was costing or how many minutes were left. That changed everything for us.
         </p>
         <div class="quote-attr">Nia</div>
         <div class="quote-attr-detail">Wife of an incarcerated man, Massachusetts</div>
@@ -1460,13 +1736,9 @@ footer {
 
       <!-- Quote 4 -->
       <div class="quote-slide">
-        <div class="quote-mark">&ldquo;</div>
+        <div class="quote-mark">"</div>
         <p class="quote-text">
-          He feels more included in our lives. We can be at a family gathering, and
-          everybody has the opportunity to speak with him at that moment. You can hear
-          it in his voice. He sounds excited to be a part of something, to be here
-          with us, whether he may not be physically, but he's there with us, and
-          he's experiencing all these moments with us.
+          He feels more included in our lives. We can be at a family gathering, and everybody has the opportunity to speak with him at that moment. You can hear it in his voice. He sounds excited to be a part of something, to be here with us, whether he may not be physically, but he's there with us, and he's experiencing all these moments with us.
         </p>
         <div class="quote-attr">Angel Rice</div>
         <div class="quote-attr-detail">Wife of an incarcerated man, California</div>
@@ -1474,27 +1746,22 @@ footer {
 
       <!-- Quote 5 -->
       <div class="quote-slide">
-        <div class="quote-mark">&ldquo;</div>
+        <div class="quote-mark">"</div>
         <p class="quote-text">
-          I think the prison system is designed to separate you from your family.
-          Free phone calls remind you that you're part of something more important
-          than yourself.
+          Today I talk to my mom every day. I call her like three times a day. I read to her, because it's hard for her to read. And we pray together.
         </p>
-        <div class="quote-attr">Sharpe</div>
-        <div class="quote-attr-detail">Formerly incarcerated, Massachusetts</div>
+        <div class="quote-attr">Saul</div>
+        <div class="quote-attr-detail">Currently incarcerated, California</div>
       </div>
 
       <!-- Quote 6 -->
       <div class="quote-slide">
-        <div class="quote-mark">&ldquo;</div>
+        <div class="quote-mark">"</div>
         <p class="quote-text">
-          I've seen people who talked to their mother for the first time in years.
-          People who haven't talked to their brother in seven years. Now they get
-          to build their relationships with their siblings and their children.
-          You never know when someone can pass away.
+          As a counselor, I give them as much support as I possibly can. But I'm not their family. I'm not their friend. They still have a guard up against me. Being able to talk to their family, they're able to get guidance that they wouldn't really want to take from me.
         </p>
-        <div class="quote-attr">Paulino Miranda</div>
-        <div class="quote-attr-detail">Currently incarcerated, Massachusetts</div>
+        <div class="quote-attr">Felix Ali</div>
+        <div class="quote-attr-detail">Counselor, Corrigan Correctional Institution, Connecticut</div>
       </div>
 
     </div>
@@ -1511,7 +1778,7 @@ footer {
 
     <!-- Progress bar -->
     <div class="quote-progress">
-      <div class="quote-progress-bar" id="quoteProgress"></div>
+      <div class="quote-progress-bar" id="quoteProgress" style="width: 0%;"></div>
     </div>
   </div>
 </section>
@@ -1521,7 +1788,7 @@ footer {
      ======================================== -->
 <section class="issues" id="issues">
   <div class="issues-inner">
-    <div class="issues-header fade-in">
+    <div class="issues-header fade-in visible">
       <span class="label">Key Findings</span>
       <h2>Eight areas of measurable impact</h2>
       <p>
@@ -1550,19 +1817,20 @@ footer {
                 <p>
                   When the cost barrier is removed, the most immediate change is simple:
                   people talk more. In Connecticut, average phone usage surged from
-                  16.1 to 44.0 minutes per person per day — a 171% increase. In California,
-                  usage rose 67%, from 14.3 to 23.8 minutes per person, and continued
-                  climbing to 42.9 minutes as tablets rolled out system-wide.
+                  18 to 43 minutes per person per day — a 142% increase. In California,
+                  usage tripled, from 14 to 44 minutes per person per day. On average,
+                  incarcerated people spoke 51 minutes per day after free calls, compared
+                  to 28 minutes before.
                 </p>
                 <div class="highlight-stat">
-                  171% increase
-                  <span>in daily phone usage in Connecticut (16.1 to 44.0 minutes per person per day)</span>
+                  104% increase
+                  <span>in average monthly call minutes across five state prison systems (118.5M to 242.2M)</span>
                 </div>
                 <p>
                   This isn't just a quantitative shift. More frequent contact means
                   relationships can be maintained in real time — birthdays, school updates,
-                  crises, and everyday moments that sustain human bonds across prison walls.
-                </p>
+                  crises, and everyday moments that sustain human bonds across prison walls.</p>
+                                <blockquote class="accordion-quote"><p>"I can call you every single day if I want to now. Previously it may have been once a week or every few weeks. So I feel a part of the everyday life of the people that I love and the people that love me."</p><cite>— Pamela Smart, Currently incarcerated, New York</cite></blockquote>
               </div>
               <div>
                 <div class="accordion-video video-treatment-1">
@@ -1601,15 +1869,15 @@ footer {
                   connected, and women carry 87% of that burden.
                 </p>
                 <div class="highlight-stat">
-                  $120M saved annually
-                  <span>Estimated annual savings across all prisons and jails from free communications</span>
+                  $105.3M saved annually
+                  <span>Annual savings across all prisons and jails studied from free communications</span>
                 </div>
                 <p>
-                  In California alone, free calls save families nearly $35 million each year.
+                  In California, free calls save families $16.1 million per year in prisons alone.
                   Ninety percent of interview respondents described the financial impact of
                   free calls as transformative — dollars that once went to telecom companies
-                  now go toward housing, food, and rebuilding lives.
-                </p>
+                  now go toward housing, food, and rebuilding lives.</p>
+                                <blockquote class="accordion-quote"><p>"It's already bad enough that he's there. So to have them taking money out of your pocket — just so that I can speak to my son — only worsens the whole situation."</p><cite>— Shelene, Mother of two incarcerated sons, Minnesota</cite></blockquote>
               </div>
               <div>
                 <div class="accordion-video video-treatment-2">
@@ -1648,14 +1916,14 @@ footer {
                   that incarceration strains.
                 </p>
                 <div class="highlight-stat">
-                  88% of respondents
-                  <span>identified building and repairing relationships as a major impact of free calls</span>
+                  93% of incarcerated people
+                  <span>and 82% of family members identified building and repairing relationships as a major impact of free calls</span>
                 </div>
                 <p>
                   These slower, more conversational talks serve as a source of healing and
                   hope — providing the kind of presence that sustains people through the
-                  hardships of separation.
-                </p>
+                  hardships of separation.</p>
+                                <blockquote class="accordion-quote"><p>"Those free phone calls keep me in constant contact with her. I would call her like every six months before that because our call was 20-something dollars. She always looked forward to hearing my voice."</p><cite>— Gregory Pierre, Currently incarcerated, Connecticut</cite></blockquote>
               </div>
               <div>
                 <div class="accordion-video video-treatment-3">
@@ -1665,7 +1933,7 @@ footer {
                     <div class="video-duration">1:15</div>
                   </div>
                 </div>
-                <p class="video-caption">Family & Community — Short documentary</p>
+                <p class="video-caption">Family &amp; Community — Short documentary</p>
               </div>
             </div>
           </div>
@@ -1700,8 +1968,8 @@ footer {
                 <p>
                   The ability to maintain consistent parental presence — even across prison
                   walls — has measurable impacts on child development, school performance,
-                  and the child's sense of security and belonging.
-                </p>
+                  and the child's sense of security and belonging.</p>
+                                <blockquote class="accordion-quote"><p>"I remember calling my daughter so early in the morning that she wouldn't talk. She would wake up, pick up the phone and say, mm-hmm. What the phone is — it's me there. It's my presence. It's her having her father."</p><cite>— Michael Tineo, Currently incarcerated, New York</cite></blockquote>
               </div>
               <div>
                 <div class="accordion-video video-treatment-4">
@@ -1711,7 +1979,7 @@ footer {
                     <div class="video-duration">1:04</div>
                   </div>
                 </div>
-                <p class="video-caption">Parenting & Child Development — Short documentary</p>
+                <p class="video-caption">Parenting &amp; Child Development — Short documentary</p>
               </div>
             </div>
           </div>
@@ -1747,6 +2015,7 @@ footer {
                   real time reinforces positive changes and creates the kind of motivation
                   that sustains transformation over years of incarceration.
                 </p>
+                                <blockquote class="accordion-quote"><p>"Conversations create a pathway for empathy and healing and just a healthy relationship with my family — and actually, just hope for a future when I get out. Knowing that I have people that I can go to. Without these phone calls, that would not have been possible."</p><cite>— Jasmeil, Currently incarcerated, California</cite></blockquote>
               </div>
               <div>
                 <div class="accordion-video video-treatment-5">
@@ -1784,8 +2053,8 @@ footer {
                   conversation with a partner — behavior changes.
                 </p>
                 <div class="highlight-stat">
-                  Safer facilities
-                  <span>Staff and incarcerated people report visibly reduced tension and fewer conflicts</span>
+                  100% of corrections staff
+                  <span>interviewed described free calls as reducing tension and making their jobs easier</span>
                 </div>
                 <p>
                   The ability to talk to families reduces the stress and isolation that
@@ -1794,6 +2063,7 @@ footer {
                   lead to disciplinary infractions — creating safer environments for
                   everyone, including correctional officers.
                 </p>
+                                <blockquote class="accordion-quote"><p>"It's helping to keep them calm and keeping them level-headed, a little grounded. Even if it's not always good news, at least they know almost immediately what's going on with their families."</p><cite>— Officer Walls, Corrections Officer, Connecticut</cite></blockquote>
               </div>
               <div>
                 <div class="accordion-video video-treatment-6">
@@ -1831,8 +2101,8 @@ footer {
                   the psychological toll of incarceration.
                 </p>
                 <div class="highlight-stat">
-                  75% of respondents
-                  <span>described emotional and mental health improvements from free calls</span>
+                  76% of incarcerated people
+                  <span>77% of family members, and 100% of staff described emotional and mental health improvements from free calls</span>
                 </div>
                 <p>
                   The mental health benefits extend to families as well, who experience
@@ -1840,6 +2110,7 @@ footer {
                   connections. Physical health also improves through reduced violence
                   exposure and lower stress-related illness.
                 </p>
+                                <blockquote class="accordion-quote"><p>"And sometimes I just needed to cry. I needed somebody to fill me up. I needed somebody to give me inspiration and guide me."</p><cite>— Yannick Ortega, Formerly incarcerated, California</cite></blockquote>
               </div>
               <div>
                 <div class="accordion-video video-treatment-7">
@@ -1849,7 +2120,7 @@ footer {
                     <div class="video-duration">1:09</div>
                   </div>
                 </div>
-                <p class="video-caption">Mental & Physical Health — Short documentary</p>
+                <p class="video-caption">Mental &amp; Physical Health — Short documentary</p>
               </div>
             </div>
           </div>
@@ -1887,6 +2158,7 @@ footer {
                   reintegration — turning the moment of release from a crisis
                   into a homecoming.
                 </p>
+                                <blockquote class="accordion-quote"><p>"I was able to call social services, call the program to help me get right into school. I got out in December — in January I was in school. All of that was possible because we didn't have to pay for the phone."</p><cite>— Donald Diggs, Formerly incarcerated, Connecticut</cite></blockquote>
               </div>
               <div>
                 <div class="accordion-video video-treatment-8">
@@ -1910,6 +2182,158 @@ footer {
 <!-- ========================================
      TAKE ACTION
      ======================================== -->
+
+<!-- ========================================
+     CASE STUDIES
+     ======================================== -->
+<section class="case-studies" id="case-studies">
+  <div class="case-studies-inner">
+    <div class="case-studies-header fade-in">
+      <div class="case-studies-label">Case Studies</div>
+      <h2 class="case-studies-title">How three states made it happen</h2>
+    </div>
+
+    <div class="case-studies-grid" id="caseStudiesGrid">
+
+      <!-- Connecticut Card -->
+      <div class="case-study-card" data-state="ct" onclick="toggleCaseStudy('ct')">
+        <div class="case-study-year">2022</div>
+        <div class="case-study-state">Connecticut</div>
+        <div class="case-study-tagline">The state that started it all</div>
+        <div class="case-study-hero-stat">
+          <div class="case-study-hero-number">163%</div>
+          <div class="case-study-hero-label">increase in monthly call minutes</div>
+        </div>
+        <div class="case-study-cta">Read the story <span class="case-study-cta-arrow">→</span></div>
+      </div>
+
+      <!-- California Card -->
+      <div class="case-study-card" data-state="ca" onclick="toggleCaseStudy('ca')">
+        <div class="case-study-year">2023</div>
+        <div class="case-study-state">California</div>
+        <div class="case-study-tagline">From local wins to statewide change</div>
+        <div class="case-study-hero-stat">
+          <div class="case-study-hero-number">200%</div>
+          <div class="case-study-hero-label">increase in monthly call minutes</div>
+        </div>
+        <div class="case-study-cta">Read the story <span class="case-study-cta-arrow">→</span></div>
+      </div>
+
+      <!-- New York Card -->
+      <div class="case-study-card" data-state="ny" onclick="toggleCaseStudy('ny')">
+        <div class="case-study-year">2025</div>
+        <div class="case-study-state">New York</div>
+        <div class="case-study-tagline">The administrative model</div>
+        <div class="case-study-hero-stat">
+          <div class="case-study-hero-number">$26.2M</div>
+          <div class="case-study-hero-label">saved by families per year</div>
+        </div>
+        <div class="case-study-cta">Read the story <span class="case-study-cta-arrow">→</span></div>
+      </div>
+
+      <!-- Connecticut Expanded -->
+      <div class="case-study-expanded" id="detail-ct">
+        <div class="case-study-expanded-header">
+          <div>
+            <div class="case-study-expanded-title">
+              <div class="case-study-expanded-state">Connecticut</div>
+              <div class="case-study-expanded-year">2022</div>
+            </div>
+            <div class="case-study-tagline-expanded">The state that started it all</div>
+          </div>
+          <button class="case-study-close-btn" onclick="toggleCaseStudy('ct')">&times;</button>
+        </div>
+        <div class="case-study-expanded-stats">
+          <div class="case-study-expanded-stat">
+            <div class="case-study-expanded-stat-number">163%</div>
+            <div class="case-study-expanded-stat-label">increase in monthly call minutes</div>
+          </div>
+          <div class="case-study-expanded-stat">
+            <div class="case-study-expanded-stat-number">$15.6M</div>
+            <div class="case-study-expanded-stat-label">saved by families per year</div>
+          </div>
+          <div class="case-study-expanded-stat">
+            <div class="case-study-expanded-stat-number">91%</div>
+            <div class="case-study-expanded-stat-label">reduction in cost per minute</div>
+          </div>
+        </div>
+        <div class="case-study-expanded-narrative">
+          <p>Connecticut became the first state in the country to make all prison and jail communication free — including phone calls, video calls, and electronic messaging — when Senate Bill 972 took effect in July 2022. The policy affects more than 10,000 incarcerated people and guarantees a minimum of 90 minutes of call time per day.</p>
+          <p>The state renegotiated its contract with Securus, moving to a per-person pricing model that dropped the effective rate from 25.8 cents to 2.3 cents per minute — the largest cost reduction of any state studied.</p>
+          <p>The victory followed years of organizing by Worth Rises and the Connecting Families Connecticut coalition, championed in the legislature by State Representative Josh Elliott and powered by directly impacted families like Diane Lewis, who became one of the campaign's most powerful advocates.</p>
+        </div>
+      </div>
+
+      <!-- California Expanded -->
+      <div class="case-study-expanded" id="detail-ca">
+        <div class="case-study-expanded-header">
+          <div>
+            <div class="case-study-expanded-title">
+              <div class="case-study-expanded-state">California</div>
+              <div class="case-study-expanded-year">2023</div>
+            </div>
+            <div class="case-study-tagline-expanded">From local wins to statewide change</div>
+          </div>
+          <button class="case-study-close-btn" onclick="toggleCaseStudy('ca')">&times;</button>
+        </div>
+        <div class="case-study-expanded-stats">
+          <div class="case-study-expanded-stat">
+            <div class="case-study-expanded-stat-number">200%</div>
+            <div class="case-study-expanded-stat-label">increase in monthly call minutes</div>
+          </div>
+          <div class="case-study-expanded-stat">
+            <div class="case-study-expanded-stat-number">$16.1M</div>
+            <div class="case-study-expanded-stat-label">saved by families per year</div>
+          </div>
+          <div class="case-study-expanded-stat">
+            <div class="case-study-expanded-stat-number">90K+</div>
+            <div class="case-study-expanded-stat-label">incarcerated people affected</div>
+          </div>
+        </div>
+        <div class="case-study-expanded-narrative">
+          <p>California's Keep Families Connected Act made phone calls free across all state prisons and youth detention facilities starting January 1, 2023. The policy built on earlier victories in San Francisco, San Diego, and Los Angeles, where local advocates had already eliminated jail call costs.</p>
+          <p>The state renegotiated its contract with ViaPath and introduced calling-enabled tablets system-wide, securing a volume discount that brought the per-minute cost down to as low as 1.9 cents. Average monthly call minutes tripled — from 41.6 million to 125.0 million — and average daily usage per person rose from 14 to 44 minutes.</p>
+          <p>Worth Rises and the Keep Families Connected coalition, including the San Francisco Financial Justice Project, Essie Justice Group, and Young Women's Freedom Center, built steady pressure that brought the bill across the finish line with legislative champion State Senator Josh Becker.</p>
+        </div>
+      </div>
+
+      <!-- New York Expanded -->
+      <div class="case-study-expanded" id="detail-ny">
+        <div class="case-study-expanded-header">
+          <div>
+            <div class="case-study-expanded-title">
+              <div class="case-study-expanded-state">New York</div>
+              <div class="case-study-expanded-year">2025</div>
+            </div>
+            <div class="case-study-tagline-expanded">The administrative model</div>
+          </div>
+          <button class="case-study-close-btn" onclick="toggleCaseStudy('ny')">&times;</button>
+        </div>
+        <div class="case-study-expanded-stats">
+          <div class="case-study-expanded-stat">
+            <div class="case-study-expanded-stat-number">$26.2M</div>
+            <div class="case-study-expanded-stat-label">saved by families per year</div>
+          </div>
+          <div class="case-study-expanded-stat">
+            <div class="case-study-expanded-stat-number">1.5¢</div>
+            <div class="case-study-expanded-stat-label">per minute — lowest rate in the country</div>
+          </div>
+          <div class="case-study-expanded-stat">
+            <div class="case-study-expanded-stat-number">30K+</div>
+            <div class="case-study-expanded-stat-label">incarcerated people affected</div>
+          </div>
+        </div>
+        <div class="case-study-expanded-narrative">
+          <p>New York took a different path. Rather than waiting for legislation, the Department of Corrections and Community Supervision made all state prison calls free administratively — incorporating communication costs directly into the corrections budget. The policy took effect August 1, 2025, going from decision to implementation in days rather than months.</p>
+          <p>The state negotiated the lowest per-minute rate in the country at just 1.5 cents — well below federal rate caps and comparable policies in other states. Every person in New York state prisons now has their own tablet for making calls, with no limits on usage. Average daily call minutes per person rose from 64 to 88, the highest sustained level observed in any system studied.</p>
+          <p>The administrative approach offers a model for states where the legislative process has proven slow or politically difficult. Worth Rises spearheaded the campaign with leaders including Assembly Speaker Carl Heastie, Assembly Member Harvey Epstein, and State Senator Jamaal T. Bailey.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <section class="action" id="action">
   <div class="action-inner">
     <div class="action-header fade-in">
@@ -1917,24 +2341,24 @@ footer {
       <h2>Connection shouldn't cost a thing.</h2>
       <p>
         The evidence is clear. Free communication saves families, strengthens communities,
-        improves safety, and reduces recidivism. Here's how you can help make it the standard everywhere.
+        improves safety, and supports rehabilitation. Here's how you can help make it the standard everywhere.
       </p>
     </div>
     <div class="action-grid">
       <div class="action-card fade-in">
         <div class="action-card-icon">
-          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
         </div>
         <h3>Read &amp; share the report</h3>
         <p>
           Download the full report and share it with your network, your elected officials,
           and anyone who needs to see what the evidence shows.
         </p>
-        <a href="#" class="action-card-link">Download the report &rarr;</a>
+        <a href="#" class="action-card-link">Download the report →</a>
       </div>
       <div class="action-card fade-in">
         <div class="action-card-icon">
-          <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
         </div>
         <h3>Contact your legislators</h3>
         <p>
@@ -1942,18 +2366,18 @@ footer {
           Massachusetts, Minnesota, and New York have led the way. Find out where your
           state stands and make your voice heard.
         </p>
-        <a href="#" class="action-card-link">Find your representative &rarr;</a>
+        <a href="#" class="action-card-link">Find your representative →</a>
       </div>
       <div class="action-card fade-in">
         <div class="action-card-icon">
-          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
         </div>
         <h3>Support the movement</h3>
         <p>
           Worth Rises and allies across the country are working to end the prison
           telecom industry's exploitation of incarcerated communities. Join them.
         </p>
-        <a href="#" class="action-card-link">Get involved &rarr;</a>
+        <a href="#" class="action-card-link">Get involved →</a>
       </div>
     </div>
   </div>
@@ -2004,7 +2428,7 @@ footer {
   <div class="footer-inner">
     <div class="footer-left">
       <div class="footer-logo-mark"><span>W</span></div>
-      <span class="footer-text">&copy; 2025 Worth Rises. All rights reserved.</span>
+      <span class="footer-text">© 2025 Worth Rises. All rights reserved.</span>
     </div>
     <ul class="footer-links">
       <li><a href="#">Privacy Policy</a></li>
@@ -2128,7 +2552,43 @@ fadeEls.forEach(el => observer.observe(el));
   // Start
   startAutoplay();
 })();
+
+  // Case Studies Toggle
+  let activeCaseStudy = null;
+
+  function toggleCaseStudy(state) {
+    const grid = document.getElementById('caseStudiesGrid');
+    const cards = document.querySelectorAll('.case-study-card');
+    const details = document.querySelectorAll('.case-study-expanded');
+
+    // If clicking the already-active card, close it
+    if (activeCaseStudy === state) {
+      details.forEach(d => d.classList.remove('visible'));
+      cards.forEach(c => c.classList.remove('active'));
+      activeCaseStudy = null;
+      return;
+    }
+
+    // Close all first
+    details.forEach(d => d.classList.remove('visible'));
+    cards.forEach(c => c.classList.remove('active'));
+
+    // Open the clicked one
+    const detail = document.getElementById('detail-' + state);
+    const card = document.querySelector('.case-study-card[data-state="' + state + '"]');
+
+    detail.classList.add('visible');
+    card.classList.add('active');
+    activeCaseStudy = state;
+
+    // Smooth scroll to it
+    setTimeout(() => {
+      detail.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }, 100);
+  }
+
 </script>
 
-</body>
-</html>
+
+
+<div id="claude-agent-glow-border" style="position: fixed; inset: 0px; pointer-events: none; z-index: 2147483646; opacity: 1; transition: opacity 0.3s ease-in-out; animation: 2s ease-in-out 0s infinite normal none running claude-pulse; box-shadow: rgba(217, 119, 87, 0.5) 0px 0px 10px inset, rgba(217, 119, 87, 0.3) 0px 0px 20px inset, rgba(217, 119, 87, 0.1) 0px 0px 30px inset;"></div></body></html>
