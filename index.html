@@ -713,7 +713,6 @@ nav.scrolled {
 
 .accordion-item {
   border-bottom: 1px solid var(--gray-100);
-  overflow: hidden;
 }
 
 .accordion-trigger {
@@ -811,11 +810,11 @@ nav.scrolled {
 .accordion-content {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .accordion-item.active .accordion-content {
-  max-height: 800px;
+  max-height: 4000px;
 }
 
 .accordion-body {
@@ -1833,6 +1832,20 @@ footer {
   }
 }
 
+
+/* Hero subtitle lifeline span */
+.hero-subtitle-lifeline {
+  display: block;
+  margin-top: 0.75em;
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 1.6vw, 1.2rem);
+  font-style: italic;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.92);
+  letter-spacing: 0;
+  line-height: 1.5;
+}
+
 </style>
 </head>
 <body>
@@ -1868,8 +1881,9 @@ footer {
     <p class="hero-subtitle">
       How free communication in prisons and jails is transforming lives,
       strengthening families, and reshaping what justice can look like.
+      <span class="hero-subtitle-lifeline">Communication is not a luxury. It is a necessary, achievable, and transformative lifeline.</span>
     </p>
-    <div class="hero-actions">
+      <div class="hero-actions">
       <a href="#" class="btn btn-primary">
         <span class="play-icon"></span>
         Watch the Film
@@ -1895,18 +1909,13 @@ footer {
         <span class="label">About the Report</span>
         <h2>When calls are free, <em>everything</em> changes.</h2>
         <p class="intro-text">
-          For decades, a $1.5 billion prison telecom industry has extracted wealth from
-          families who can least afford it — charging exorbitant rates for a phone call
-          and costing families nearly $4,200 a year in incarceration-related expenses.
-          Black families have borne a disproportionate share, paying 2.5 times more
-          than white families for the same connection.
+          For decades, a $1.5 billion prison telecom industry has extracted wealth from families who can least afford it — charging exorbitant rates for a phone call and costing families nearly $4,200 a year in incarceration-related expenses. Black families have borne a disproportionate share, paying 2.5 times more than white families for the same connection. Families, who are punished by proximity, have long carried this burden alongside the emotional weight of separation.
         </p>
         <p class="intro-text">
           A growing movement has changed that. This report represents the first systematic
           effort to document what happens when the cost barrier is removed: drawing on
           quantitative data and in-depth qualitative interviews across multiple jurisdictions,
-          it presents direct evidence of the profound impact free communication has on
-          incarcerated people, their families, and the facilities that hold them.
+          it presents direct evidence of what happens when the cost barrier is removed: connection expands, relationships strengthen, and families are better able to navigate the challenges of incarceration together toward a safer future for all.
         </p>
         <a href="#" class="report-link">
           Read the full report
@@ -2063,9 +2072,7 @@ footer {
       <h2>Eight areas of measurable impact</h2>
       <p>
         Drawing on structured data and in-depth interviews across multiple jurisdictions,
-        the report identifies eight areas where free communication has produced
-        documented, meaningful change — for incarcerated people, their families,
-        and the systems that hold them.
+        the report identifies eight areas where free communication has produced documented, meaningful change — for incarcerated people, their families, and the systems that hold them. Removing the cost of communication produces measurable changes that extend beyond individual experience, strengthening families, stabilizing institutions, and supporting safer, more connected communities that include the people returning home.
       </p>
     </div>
 
@@ -2086,7 +2093,7 @@ footer {
               <!-- Row A: intro text | stat -->
               <div class="editorial-row row-a">
                 <div class="editorial-text-block">
-                  <p>When the cost barrier is removed, the most immediate change is simple: people talk more. In Connecticut, average phone usage surged from 18 to 43 minutes per person per day — a 142% increase. In California, usage tripled. On average, incarcerated people spoke 45 minutes per day after free calls, compared to 25 minutes before — a 79% increase.</p>
+                  <p>Today, more than 330,000 incarcerated people have access to free phone calls thanks to free communication policies in their jurisdictions. To date, these policies have enabled nearly 600 million additional calls and more than 6.4 billion additional call minutes between incarcerated people and their loved ones — hundreds of millions more chances to say “I love you” and billions more minutes of laughter, shared moments, and connection. When the cost barrier was removed, connection increased immediately, dramatically, and durably across every system studied, making clear that existing, exploitative pricing structures were needlessly suppressing incarcerated people’s ability to connect with loved ones.</p>
                 </div>
                 <div class="editorial-stat-block">
                   <div class="editorial-stat">
@@ -2104,7 +2111,7 @@ footer {
                   </blockquote>
                 </div>
                 <div class="editorial-text-block">
-                  <p>This isn't only a quantitative shift. More frequent contact means relationships can be maintained in real time — birthdays, school updates, crises, and everyday moments that sustain human bonds across prison walls.</p>
+                  <p>This isn't only a quantitative shift. Conversations moved from compressed, pragmatic agendas to sustained, everyday interaction — sitting on the phone while a child does homework, watching a movie simultaneously, listening to a sports game together, engaging in prayer or Bible study, or simply remaining connected without urgency.</p>
                 </div>
               </div>
               <!-- Row C: body text | video -->
@@ -2142,7 +2149,7 @@ footer {
               <!-- Row A: intro text | stat -->
               <div class="editorial-row row-a">
                 <div class="editorial-text-block">
-                  <p>Families with incarcerated loved ones — disproportionately low-income, disproportionately Black and brown — have shouldered the cost of a $1.5 billion prison telecom industry for decades. One in three goes into debt to stay connected, and women carry 87% of that burden.</p>
+                  <p>For decades, correctional telecommunications providers have charged incarcerated people and their families exorbitant per minute rates and added fees to stay in touch. Given the remarkably low wages, if any, paid to incarcerated people, it is often families on the outside who bear this cost — households with limited financial means that have already been destabilized by the incarceration of a family member. One in three families goes into debt trying to stay connected, and women carry 87% of that burden — a system that can trap families in cycles of poverty and incarceration with generational consequences.</p>
                 </div>
                 <div class="editorial-stat-block">
                   <div class="editorial-stat">
@@ -2160,13 +2167,13 @@ footer {
                   </blockquote>
                 </div>
                 <div class="editorial-text-block">
-                  <p>Savings per family ranged from $172 per year in California to $1,801 in Connecticut. Families used those dollars to cover housing, reduce debt, and plan for the future. For some, it meant the first real financial breathing room since their loved one was incarcerated.</p>
+                  <p>Savings per family ranged from $172 per year in California to $1,801 in Connecticut. That new financial capacity did not sit idle — families used it to cover important expenses, reduce debt, and invest in their futures, driving many toward economic stability and even economic mobility.</p>
                 </div>
               </div>
               <!-- Row C: body text | video -->
               <div class="editorial-row row-c">
                 <div class="editorial-text-block">
-                  <p>The financial shift had emotional dimensions too. Incarcerated people described the shame of asking family to fund their calls — a shame that evaporated overnight. When the cost disappeared, so did a persistent source of guilt on both sides of the line.</p>
+                  <p>The financial shift carried emotional weight too. Incarcerated people described a persistent sense of embarrassment and shame in needing family to pay just to stay connected. When free communication policies were implemented, participants repeatedly described feeling a weight lifted — for themselves, and for the families they could finally stop burdening.</p>
                 </div>
                 <div class="editorial-video-block">
                   <div class="accordion-video video-treatment-2">
@@ -2198,7 +2205,7 @@ footer {
               <!-- Row A: intro text | stat -->
               <div class="editorial-row row-a">
                 <div class="editorial-text-block">
-                  <p>Free communication creates a fundamental shift from transactional to relational. When the constant calculation — whether connection is worth the cost — disappears, conversations become something else entirely. People sit on the phone while a child does homework, share prayer, watch movies together, listen to each other do the dishes.</p>
+                  <p>Maintaining, and even expanding, social ties is critical for incarcerated people and their successful rehabilitation and reentry. These connections are also immensely important to the people who love them and who experience incarceration alongside them. Incarcerated people and their loved ones expressed needing each other — debunking the myth that connection is simply about support for the incarcerated person. It is, in fact, a two-way road: relationships rooted in reciprocity, with support and accountability flowing both ways.</p>
                 </div>
                 <div class="editorial-stat-block">
                   <div class="editorial-stat">
@@ -2216,13 +2223,13 @@ footer {
                   </blockquote>
                 </div>
                 <div class="editorial-text-block">
-                  <p>Participants described rekindling relationships that had broken — sometimes after years of silence. Hearing a daughter's voice for the first time in a decade. Meeting grandchildren. Being present for a birthday surprise over the phone.</p>
+                  <p>Before free calls, participants reported going days, weeks, or even months between calls — conversations rationed around cost, limited to the most urgent matters. What came after: relationships rekindled after years of silence, grandchildren met for the first time, birthdays shared over the phone.</p>
                 </div>
               </div>
               <!-- Row C: body text | video -->
               <div class="editorial-row row-c">
                 <div class="editorial-text-block">
-                  <p>These connections don't just sustain people through incarceration. They are the foundation on which successful return home is built — the relationships that incarcerated people will rely on after release to navigate housing, employment, and belonging.</p>
+                  <p>These connections don't just sustain people through incarceration. They preserve the relationships that make hope, healing, rehabilitation, and reentry possible — and they become the foundation on which successful return is built.</p>
                 </div>
                 <div class="editorial-video-block">
                   <div class="accordion-video video-treatment-3">
@@ -2254,7 +2261,7 @@ footer {
               <!-- Row A: intro text | stat -->
               <div class="editorial-row row-a">
                 <div class="editorial-text-block">
-                  <p>For children with incarcerated parents, phone calls are not a luxury — they are a necessity for healthy development and emotional security. When calls were costly, parents missed the small, consistent moments that build trust: waking children up, checking in before school, helping with homework, saying goodnight.</p>
+                  <p>Nearly half of people in state prisons are parents to minor children, with 19% of those children four or younger. For parents who are incarcerated, connecting with their children over the phone is one of the primary ways they continue to parent while separated. But the high cost of phone calls has long made that kind of connection difficult to sustain — forcing parents to consider whether to spend limited resources on staying involved in their children’s lives or on other basic needs. The result: the small, consistent moments that build trust — waking children up, helping with homework, saying goodnight — were the first to disappear.</p>
                 </div>
                 <div class="editorial-stat-block">
                   <div class="editorial-stat">
@@ -2272,13 +2279,13 @@ footer {
                   </blockquote>
                 </div>
                 <div class="editorial-text-block">
-                  <p>Free communication restored those moments. Parents describe children running to the phone, eagerly anticipating calls, opening up in ways that shorter, rationed conversations never allowed. For children with disabilities, the impact was especially significant — consistent daily contact produced measurable developmental gains.</p>
+                  <p>Free communication restored those moments. Parents describe children running to the phone, eagerly anticipating daily calls, opening up in ways that rationed conversations never allowed. Free calls let parents engage in the less visible but essential aspects of caregiving — offering guidance, acting as a sounding board, and helping children understand their family's history, traditions, and values. For one family, daily hour-long calls with an autistic daughter produced a concrete change: she started speaking more, becoming vocal in ways she hadn't been before.</p>
                 </div>
               </div>
               <!-- Row C: body text | video -->
               <div class="editorial-row row-c">
                 <div class="editorial-text-block">
-                  <p>These effects help mitigate the intergenerational harm of parental incarceration in concrete, documented ways. Research shows that stronger parent-child relationships during incarceration improve outcomes for impacted children — and the generations that come after.</p>
+                  <p>Research shows that parental incarceration can influence children's future involvement in the criminal legal and child-welfare systems. But stronger parent-child relationships can help mitigate that harm — for impacted children and the generations that follow. By enabling consistent parental engagement and supporting child development, free communication policies strengthen family stability and generational mobility.</p>
                 </div>
                 <div class="editorial-video-block">
                   <div class="accordion-video video-treatment-4">
@@ -2295,12 +2302,12 @@ footer {
         </div>
       </div>
 
-      <!-- 5. Improved Mental & Physical Health -->
+      <!-- 5. Improved Mental & Medical Health -->
       <div class="accordion-item">
         <button class="accordion-trigger" aria-expanded="false">
           <div class="accordion-trigger-left">
             <span class="accordion-number">05</span>
-            <span class="accordion-title">Improved Mental &amp; Physical Health</span>
+            <span class="accordion-title">Improved Mental &amp; Medical Health</span>
           </div>
           <div class="accordion-icon"><span class="accordion-icon-bar"></span></div>
         </button>
@@ -2310,7 +2317,7 @@ footer {
               <!-- Row A: intro text | stat -->
               <div class="editorial-row row-a">
                 <div class="editorial-text-block">
-                  <p>Prisons and jails are isolating by design. Incarcerated people cut off from their families experience higher rates of depression, anxiety, and deteriorating physical health. Free communication functions as a lifeline — providing the human connection that is protective against the psychological toll of incarceration.</p>
+                  <p>Prisons and jails are isolating by design. Incarceration cuts people off from their families and communities, leaving many feeling abandoned, worthless, and hopeless. These emotions manifest in unproductive ways that can stunt the development of prosocial skills and rehabilitation, to the detriment of public safety. Phone calls are a literal lifeline for incarcerated people — and when they became free, people used them.</p>
                 </div>
                 <div class="editorial-stat-block">
                   <div class="editorial-stat">
@@ -2328,13 +2335,13 @@ footer {
                   </blockquote>
                 </div>
                 <div class="editorial-text-block">
-                  <p>Participants described being able to grieve alongside loved ones, process difficult news in real time, and regulate emotion simply by having someone to call. The benefits extend to families on the outside, who experience relief from both the financial and emotional strain of rationed contact.</p>
+                  <p>Participants described being able to grieve alongside loved ones, process difficult news in real time, and stay grounded simply by having someone to call. For many, this connection restored a broader sense of purpose and hope — regular communication kept people anchored in their relationships and reinforcing that they were still part of something beyond incarceration.</p>
                 </div>
               </div>
               <!-- Row C: body text | video -->
               <div class="editorial-row row-c">
                 <div class="editorial-text-block">
-                  <p>Inside facilities, individual improvements in mental health ripple outward — a calmer person is a safer person. Free communication also opened an unexpected medical channel: when incarcerated people couldn't get adequate attention from correctional staff, loved ones could call the facility and escalate concerns on their behalf.</p>
+                  <p>Inside facilities, individual improvements in mental health ripple outward — a calmer person is a safer person. As one formerly incarcerated person in California put it: “These free phone calls keep us soft, keep us focused on freedom, and not what’s happening around us.” Free communication also opened an unexpected medical channel: when incarcerated people couldn't get adequate attention from correctional staff, loved ones could call the facility and escalate concerns on their behalf.</p>
                 </div>
                 <div class="editorial-video-block">
                   <div class="accordion-video video-treatment-5">
@@ -2366,7 +2373,7 @@ footer {
               <!-- Row A: intro text | stat -->
               <div class="editorial-row row-a">
                 <div class="editorial-text-block">
-                  <p>Phones have long been the most volatile pressure point inside correctional facilities — the place where people receive the best and worst news, where financial scarcity and emotional charge collide. Before free calling, participants described long lines, bullying over phone access, and conversations cut short by cost, sending people back into shared living spaces still carrying unresolved stress.</p>
+                  <p>Phones have long been one of the most volatile pressure points inside correctional facilities. It is at the phones where it all happens — where incarcerated people get good news and bad news that can change their day or their life. Artificial scarcity created by high call costs, limited infrastructure, and restrictive access meant that phones were a consistent source of tension: long lines, time limits, bullying over phone access, and conversations cut short — leaving people to carry unresolved stress back into shared living spaces.</p>
                 </div>
                 <div class="editorial-stat-block">
                   <div class="editorial-stat">
@@ -2390,7 +2397,7 @@ footer {
               <!-- Row C: body text | video -->
               <div class="editorial-row row-c">
                 <div class="editorial-text-block">
-                  <p>Correctional staff, incarcerated people, and family members alike used the same word: calmer. With fewer conflicts and increased support from loved ones in navigating emotionally charged situations, disciplinary infractions dropped — and with them, barriers to early release.</p>
+                  <p>Correctional staff, incarcerated people, and family members alike used the same word: calmer. As one formerly incarcerated person described it, free calls brought a shift of energy — the saddest person in the facility was smiling, and correctional officers felt it. By eliminating scarcity, supporting emotional regulation, and providing a constructive outlet for time and attention, free calls reduced one of the most persistent sources of tension, conflict, and violence inside correctional facilities for both staff and incarcerated people.</p>
                 </div>
                 <div class="editorial-video-block">
                   <div class="accordion-video video-treatment-6">
@@ -2422,7 +2429,7 @@ footer {
               <!-- Row A: intro text | stat -->
               <div class="editorial-row row-a">
                 <div class="editorial-text-block">
-                  <p>Free communication doesn't replace rehabilitation programs — it activates them. When incarcerated people maintain consistent contact with loved ones, they regain a sense of identity and responsibility that motivates genuine engagement in their own growth. Hope is not abstract. It comes from specific people who are waiting.</p>
+                  <p>For many incarcerated people, staying connected to loved ones is not just about maintaining relationships — it is a catalyst for the internal motivation behind personal growth. That internal motivation is difficult to build when disconnected from the hope loved ones help create. Like everyone, incarcerated people feed off the love, energy, and faith that their relationships foster, making connection critical to rehabilitation. Staying in touch allows people to remain connected to who they are as parents, partners, and members of their communities — rather than becoming defined solely by their time inside.</p>
                 </div>
                 <div class="editorial-stat-block">
                   <div class="editorial-stat">
@@ -2435,18 +2442,18 @@ footer {
               <div class="editorial-row row-b">
                 <div class="editorial-quote-block">
                   <blockquote class="editorial-quote">
-                    <p>Conversations create a pathway for empathy and healing — and actually, just hope for a future when I get out. Knowing that I have people that I can go to. Without these phone calls, that would not have been possible.</p>
+                    <p>Conversations create a pathway for empathy and healing — and actually, just hope for a future when I get out. Without these phone calls, that would not have been possible. They were vital for my healing, for my sobriety, for my growth, and for my ability to do the positive things I’m doing now in prison — because I have a belief that there are people out there who care for me, who love me, and who I am responsible for.</p>
                     <cite>— Jasmeil, Currently incarcerated, California</cite>
                   </blockquote>
                 </div>
                 <div class="editorial-text-block">
-                  <p>Participants describe a measurable internal shift: a reason to exercise, to enroll in programs, to stay out of trouble. Fewer disciplinary infractions often directly affect parole eligibility. The civic ties sustained through free calls — to faith communities, advocacy networks, and mutual aid — lay groundwork for reintegration before release ever happens.</p>
+                  <p>Correctional staff observed the shift directly. As one incarcerated person in California described looking around his facility: “They’re exercising more, getting involved in groups, going to church. Why? They want to become better men because they’re making these connections. I can see the desire to do something different.” Fewer disciplinary infractions often directly affect parole eligibility — meaning these relationships can bring people home sooner.</p>
                 </div>
               </div>
               <!-- Row C: body text | video -->
               <div class="editorial-row row-c">
                 <div class="editorial-text-block">
-                  <p>As the report puts it: these connections are not separate from rehabilitation. They may be the root of it. Maintaining community ties, contributing to shared efforts, and staying engaged in collective life reinforce the habits, relationships, and sense of purpose that support long-term change.</p>
+                  <p>By helping incarcerated people maintain identity, connection, and a sense of responsibility to others, free communication supports rehabilitation not by replacing formal programs, but by strengthening the social foundations that make those programs effective. Maintaining community ties, contributing to shared efforts, and staying engaged in collective life reinforce the habits, relationships, and sense of purpose that support long-term change.</p>
                 </div>
                 <div class="editorial-video-block">
                   <div class="accordion-video video-treatment-7">
@@ -2478,7 +2485,7 @@ footer {
               <!-- Row A: intro text | stat -->
               <div class="editorial-row row-a">
                 <div class="editorial-text-block">
-                  <p>Reentry is daunting. Formerly incarcerated people face homelessness at nearly 10 times the general population rate and unemployment above 27%. Overburdened case managers cannot close that gap alone. What research consistently shows is that strong, sustained community ties are among the most powerful predictors of successful return.</p>
+                  <p>Reentry can be daunting, and understandably so — the free world does not make it easy. Overburdened case managers and release planners often face large caseloads that limit the support they can provide. Ultimately, many incarcerated people are released without housing, employment, or the community support they need to help them navigate freedom. Formerly incarcerated people are almost 10 times more likely to be homeless than the general public and have an unemployment rate of over 27%. Research has repeatedly shown that strong and consistent community ties is among the most important factors in reentry success.</p>
                 </div>
                 <div class="editorial-stat-block">
                   <div class="editorial-stat">
@@ -2491,18 +2498,18 @@ footer {
               <div class="editorial-row row-b">
                 <div class="editorial-quote-block">
                   <blockquote class="editorial-quote">
-                    <p>I was able to call social services, call transitional housing, call the school. I got out in December, and in January, I was in school. All of that was possible because we didn't have to pay for the phone.</p>
+                    <p>I was able to call social services, call transitional housing, call the school, call the Rock program. I got out in December, and in January, I was in school. All of that was possible because we didn't have to pay for the phone.</p>
                     <cite>— Donald Diggs, Formerly incarcerated, California</cite>
                   </blockquote>
                 </div>
                 <div class="editorial-text-block">
-                  <p>Free communication lets reentry planning begin before the prison door opens. Participants describe using calls to secure housing, arrange employment, enroll in education, coordinate treatment — all before release. The bonds built through consistent connection during incarceration become the foundation for reintegration.</p>
+                  <p>Free communication lets reentry planning begin before the prison door opens — rather than scrambling to access resources in the critical and often chaotic days immediately following release. Participants describe using calls to secure housing, arrange employment, enroll in education, and coordinate treatment, all before release. The bonds built through consistent connection during incarceration become the foundation for reintegration.</p>
                 </div>
               </div>
               <!-- Row C: body text | video -->
               <div class="editorial-row row-c">
                 <div class="editorial-text-block">
-                  <p>Successful reentry is not just a personal outcome — it is a public one. When people return home with stable housing, employment, and strong support networks, communities are safer and public systems are less burdened. Free communication is not simply a benefit to incarcerated people and their families; it is an investment in the communities they return to.</p>
+                  <p>Successful reentry is not just a personal outcome — it is a public one. When people return home with stable housing, employment, and strong support networks, communities are safer and public systems are less burdened. Free communication is not simply a benefit to incarcerated people and their families; it is an investment in our communities as they come home.</p>
                 </div>
                 <div class="editorial-video-block">
                   <div class="accordion-video video-treatment-8">
@@ -2623,7 +2630,7 @@ footer {
   <div class="footer-inner">
     <div class="footer-left">
       <div class="footer-logo-mark"><span>W</span></div>
-      <span class="footer-text">© 2025 Worth Rises. All rights reserved.</span>
+      <span class="footer-text">© 2026 Worth Rises. All rights reserved.</span>
     </div>
     <ul class="footer-links">
       <li><a href="#">Privacy Policy</a></li>
