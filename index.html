@@ -1605,6 +1605,234 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+
+/* ========================================
+   INTRO ILLUSTRATION
+   ======================================== */
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  align-items: center;
+}
+.intro-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.intro-illustration {
+  width: 100%;
+  max-width: 380px;
+}
+.illustration-placeholder {
+  width: 100%;
+  aspect-ratio: 5/6;
+  background: var(--lavender-soft);
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.illus-svg {
+  width: 80%;
+  height: 80%;
+  color: var(--purple-mid);
+}
+
+/* ========================================
+   HERO VIDEO SECTION
+   ======================================== */
+.hero-video-section {
+  background: var(--black);
+  padding: 0;
+}
+.hero-video-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+.hero-video-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/7;
+  background: linear-gradient(135deg, var(--purple-deep) 0%, #1a0a2e 50%, #0d0d0d 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+}
+.hero-video-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 30% 50%, rgba(91,30,130,0.4) 0%, transparent 70%);
+}
+.hero-video-play {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 80px;
+  height: 80px;
+  position: relative;
+  z-index: 2;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.hero-video-play:hover {
+  transform: scale(1.1);
+  opacity: 0.9;
+}
+.hero-video-play svg {
+  width: 80px;
+  height: 80px;
+}
+.hero-video-label {
+  position: absolute;
+  bottom: var(--space-md);
+  left: var(--space-lg);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.hero-video-eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--green-lime);
+  opacity: 0.9;
+}
+.hero-video-title {
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  color: white;
+  opacity: 0.9;
+}
+
+/* ========================================
+   EDITORIAL ACCORDION LAYOUT
+   ======================================== */
+.editorial-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.editorial-row {
+  display: grid;
+  gap: var(--space-lg);
+  padding: var(--space-lg) 0;
+  border-bottom: 1px solid var(--gray-100);
+}
+.editorial-row:last-child {
+  border-bottom: none;
+}
+
+/* Row A: text 55% | stat 40% */
+.row-a {
+  grid-template-columns: 55fr 40fr;
+  align-items: start;
+}
+/* Row B: quote 38% | text 55% */
+.row-b {
+  grid-template-columns: 38fr 55fr;
+  align-items: start;
+}
+/* Row C: text 55% | video 40% */
+.row-c {
+  grid-template-columns: 55fr 40fr;
+  align-items: start;
+}
+
+.editorial-text-block p {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--gray-700);
+}
+
+.editorial-stat-block {
+  display: flex;
+  align-items: flex-start;
+  padding-top: 0.25rem;
+}
+.editorial-stat {
+  background: var(--lavender-faint);
+  border-left: 3px solid var(--purple-mid);
+  padding: var(--space-md) var(--space-md);
+  border-radius: 0 12px 12px 0;
+  width: 100%;
+}
+.editorial-stat-number {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 2.5vw, 2.4rem);
+  color: var(--purple-mid);
+  line-height: 1.1;
+  margin-bottom: var(--space-xs);
+}
+.editorial-stat-label {
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: var(--gray-700);
+}
+
+.editorial-quote-block {
+  display: flex;
+  align-items: flex-start;
+}
+.editorial-quote {
+  border-left: none;
+  border-top: 3px solid var(--green-lime);
+  padding: var(--space-md) 0 0 0;
+  margin: 0;
+  width: 100%;
+}
+.editorial-quote p {
+  font-family: var(--font-display);
+  font-size: clamp(0.95rem, 1.3vw, 1.15rem);
+  font-style: italic;
+  line-height: 1.6;
+  color: var(--purple-deep);
+  margin-bottom: var(--space-xs);
+}
+.editorial-quote cite {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--gray-500);
+  text-transform: uppercase;
+}
+.editorial-video-block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .intro-grid {
+    grid-template-columns: 1fr;
+  }
+  .intro-right {
+    display: none;
+  }
+  .hero-video-frame {
+    aspect-ratio: 16/9;
+  }
+  .row-a, .row-b, .row-c {
+    grid-template-columns: 1fr;
+  }
+  .row-b .editorial-quote-block {
+    order: 2;
+  }
+  .row-b .editorial-text-block {
+    order: 1;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -1620,7 +1848,6 @@ footer {
     </a>
     <ul class="nav-links">
       <li><a href="#intro">About the Report</a></li>
-      <li><a href="#case-studies">Case Studies</a></li>
       <li><a href="#action">Take Action</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#" class="nav-cta">Read the Report</a></li>
@@ -1687,24 +1914,54 @@ footer {
         </a>
       </div>
       <div class="intro-right fade-in visible">
-        <div class="stat-grid">
-          <div class="stat-card">
-            <div class="stat-number">330K+</div>
-            <div class="stat-description">Incarcerated people and loved ones now with access to free phone calls</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number">$622.5M+</div>
-            <div class="stat-description">In combined savings from free communication policies nationwide</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number">104%</div>
-            <div class="stat-description">Increase in call volume across all prison systems studied</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number">93%</div>
-            <div class="stat-description">Of incarcerated people identified building relationships as a major impact of free calls</div>
+        <div class="intro-illustration">
+          <div class="illustration-placeholder">
+            <svg viewBox="0 0 400 480" xmlns="http://www.w3.org/2000/svg" class="illus-svg">
+              <!-- Phone receiver -->
+              <rect x="150" y="80" width="100" height="180" rx="24" fill="none" stroke="currentColor" stroke-width="3"/>
+              <rect x="162" y="96" width="76" height="110" rx="6" fill="currentColor" opacity="0.08"/>
+              <circle cx="200" cy="228" r="10" fill="none" stroke="currentColor" stroke-width="2.5"/>
+              <!-- Signal arcs -->
+              <path d="M240 150 Q270 150 270 185 Q270 220 240 220" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" opacity="0.5"/>
+              <path d="M253 135 Q295 135 295 185 Q295 235 253 235" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.3"/>
+              <!-- Connection dots -->
+              <circle cx="120" cy="300" r="28" fill="currentColor" opacity="0.1" stroke="currentColor" stroke-width="2"/>
+              <circle cx="120" cy="300" r="6" fill="currentColor" opacity="0.5"/>
+              <circle cx="280" cy="310" r="22" fill="currentColor" opacity="0.08" stroke="currentColor" stroke-width="2"/>
+              <circle cx="280" cy="310" r="5" fill="currentColor" opacity="0.4"/>
+              <circle cx="200" cy="360" r="18" fill="currentColor" opacity="0.06" stroke="currentColor" stroke-width="2"/>
+              <circle cx="200" cy="360" r="4" fill="currentColor" opacity="0.35"/>
+              <!-- Connecting lines -->
+              <line x1="200" y1="262" x2="148" y2="292" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.3"/>
+              <line x1="200" y1="262" x2="258" y2="300" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.3"/>
+              <line x1="200" y1="262" x2="200" y2="342" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.3"/>
+              <!-- Label -->
+              <text x="200" y="430" text-anchor="middle" font-size="11" fill="currentColor" opacity="0.35" font-family="DM Sans, sans-serif" letter-spacing="2">[ ILLUSTRATION ]</text>
+            </svg>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ========================================
+     HERO VIDEO
+     ======================================== -->
+<section class="hero-video-section">
+  <div class="hero-video-inner fade-in">
+    <div class="hero-video-frame">
+      <div class="hero-video-bg"></div>
+      <button class="hero-video-play" aria-label="Play hero film">
+        <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="30" cy="30" r="29" stroke="white" stroke-width="1.5" fill="none" opacity="0.6"/>
+          <polygon points="24,18 46,30 24,42" fill="white"/>
+        </svg>
+      </button>
+      <div class="hero-video-label">
+        <span class="hero-video-eyebrow">Watch the film</span>
+        <span class="hero-video-title">Critical Connections: The Power of Free</span>
       </div>
     </div>
   </div>
@@ -1774,7 +2031,7 @@ footer {
           As a counselor, I give them as much support as I possibly can. But I'm not their family. I'm not their friend. They still have a guard up against me. Being able to talk to their family, they're able to get guidance that they wouldn't really want to take from me.
         </p>
         <div class="quote-attr">Felix Ali</div>
-        <div class="quote-attr-detail">Counselor, Corrigan Correctional Institution, Connecticut</div>
+        <div class="quote-attr-detail">Counselor, New York State Correctional Facility</div>
       </div>
 
     </div>
@@ -1825,38 +2082,48 @@ footer {
         </button>
         <div class="accordion-content">
           <div class="accordion-body">
-            <div class="accordion-grid">
-              <div class="accordion-text">
-                <p>
-                  When the cost barrier is removed, the most immediate change is simple:
-                  people talk more. In Connecticut, average phone usage surged from
-                  18 to 43 minutes per person per day — a 142% increase. In California,
-                  usage tripled, from 14 to 44 minutes per person per day. On average,
-                  incarcerated people spoke 45 minutes per day after free calls, compared
-                  to 25 minutes before.
-                </p>
-                <div class="highlight-stat">
-                  6.4 billion additional minutes
-                  <span>of connection and nearly 600 million additional calls between incarcerated people and their loved ones</span>
+                        <div class="editorial-grid">
+              <!-- Row A: intro text | stat -->
+              <div class="editorial-row row-a">
+                <div class="editorial-text-block">
+                  <p>When the cost barrier is removed, the most immediate change is simple: people talk more. In Connecticut, average phone usage surged from 18 to 43 minutes per person per day — a 142% increase. In California, usage tripled. On average, incarcerated people spoke 45 minutes per day after free calls, compared to 25 minutes before — a 79% increase.</p>
                 </div>
-                <p>
-                  This isn't just a quantitative shift. More frequent contact means
-                  relationships can be maintained in real time — birthdays, school updates,
-                  crises, and everyday moments that sustain human bonds across prison walls. In jail systems, the impact is equally striking: monthly call minutes increased from 24.1 million to 36.9 million, and the average per person per day more than doubled from 27 to 57 minutes.</p>
-                                <blockquote class="accordion-quote"><p>"I can call you every single day if I want to now. Previously it may have been once a week or every few weeks. So I feel a part of the everyday life of the people that I love and the people that love me."</p><cite>— Pamela Smart, Currently incarcerated, New York</cite></blockquote>
-              </div>
-              <div>
-                <div class="accordion-video video-treatment-1">
-                  <div class="video-placeholder">
-                    <div class="video-placeholder-bg"></div>
-                    <div class="video-play-btn"></div>
-                    <div class="video-duration">1:12</div>
+                <div class="editorial-stat-block">
+                  <div class="editorial-stat">
+                    <div class="editorial-stat-number">330,000+</div>
+                    <div class="editorial-stat-label">people now have access to free calls — enabling nearly 600 million additional calls and 6.4 billion additional minutes of connection to date</div>
                   </div>
                 </div>
-                <p class="video-caption">Increased Connection — Short documentary</p>
+              </div>
+              <!-- Row B: quote | body text -->
+              <div class="editorial-row row-b">
+                <div class="editorial-quote-block">
+                  <blockquote class="editorial-quote">
+                    <p>I'm not looking at a clock saying, how much did that cost them today.</p>
+                    <cite>— Mike, Currently incarcerated, New York</cite>
+                  </blockquote>
+                </div>
+                <div class="editorial-text-block">
+                  <p>This isn't only a quantitative shift. More frequent contact means relationships can be maintained in real time — birthdays, school updates, crises, and everyday moments that sustain human bonds across prison walls.</p>
+                </div>
+              </div>
+              <!-- Row C: body text | video -->
+              <div class="editorial-row row-c">
+                <div class="editorial-text-block">
+                  <p>What had once been rationed and rushed became something else: ordinary, ongoing presence. In jails, average daily minutes per person more than doubled, from 27 to 57 — an even steeper jump, reflecting the urgent needs of people recently incarcerated and those awaiting trial.</p>
+                </div>
+                <div class="editorial-video-block">
+                  <div class="accordion-video video-treatment-1">
+                    <div class="video-placeholder">
+                      <div class="video-placeholder-bg"></div>
+                      <div class="video-play-btn"></div>
+                      <div class="video-duration">1:12</div>
+                    </div>
+                  </div>
+                  <p class="video-caption">6.4 billion minutes restored — and counting</p>
+                </div>
               </div>
             </div>
-          </div>
         </div>
       </div>
 
@@ -1871,39 +2138,48 @@ footer {
         </button>
         <div class="accordion-content">
           <div class="accordion-body">
-            <div class="accordion-grid">
-              <div class="accordion-text">
-                <p>
-                  Families with incarcerated loved ones — disproportionately low-income
-                  communities and communities of color — have shouldered billions in
-                  communication costs. The prison telecom industry, a $1.5 billion sector
-                  controlled largely by three companies, has extracted wealth from families
-                  who can least afford it. One in three families goes into debt to stay
-                  connected, and women carry 87% of that burden. Seventy percent of prison savings and 82% of jail savings went to non-white families.
-                </p>
-                <div class="highlight-stat">
-                  $622.5 million shifted back to families
-                  <span>to date, with $460.4 million from prisons alone</span>
+                        <div class="editorial-grid">
+              <!-- Row A: intro text | stat -->
+              <div class="editorial-row row-a">
+                <div class="editorial-text-block">
+                  <p>Families with incarcerated loved ones — disproportionately low-income, disproportionately Black and brown — have shouldered the cost of a $1.5 billion prison telecom industry for decades. One in three goes into debt to stay connected, and women carry 87% of that burden.</p>
                 </div>
-                <p>
-                  In California, free calls save families $16.1 million per year in prisons alone.
-                  Ninety percent of interview respondents described the financial impact of
-                  free calls as transformative — dollars that once went to telecom companies
-                  now go toward housing, food, and rebuilding lives.</p>
-                                <blockquote class="accordion-quote"><p>"It's already bad enough that he's there. So to have them taking money out of your pocket — just so that I can speak to my son — only worsens the whole situation."</p><cite>— Shelene, Mother of two incarcerated sons, Minnesota</cite></blockquote>
-              </div>
-              <div>
-                <div class="accordion-video video-treatment-2">
-                  <div class="video-placeholder">
-                    <div class="video-placeholder-bg"></div>
-                    <div class="video-play-btn"></div>
-                    <div class="video-duration">1:08</div>
+                <div class="editorial-stat-block">
+                  <div class="editorial-stat">
+                    <div class="editorial-stat-number">$622.5M</div>
+                    <div class="editorial-stat-label">shifted back to families to date — with 73% flowing to non-white families, who have borne this cost most heavily</div>
                   </div>
                 </div>
-                <p class="video-caption">Financial Relief — Short documentary</p>
+              </div>
+              <!-- Row B: quote | body text -->
+              <div class="editorial-row row-b">
+                <div class="editorial-quote-block">
+                  <blockquote class="editorial-quote">
+                    <p>Then it clicked, that I don't have to put money on the phone anymore. I started crying because it was just such a relief. That's not something I ever have to worry about again.</p>
+                    <cite>— Nia, Wife of an incarcerated man, Massachusetts</cite>
+                  </blockquote>
+                </div>
+                <div class="editorial-text-block">
+                  <p>Savings per family ranged from $172 per year in California to $1,801 in Connecticut. Families used those dollars to cover housing, reduce debt, and plan for the future. For some, it meant the first real financial breathing room since their loved one was incarcerated.</p>
+                </div>
+              </div>
+              <!-- Row C: body text | video -->
+              <div class="editorial-row row-c">
+                <div class="editorial-text-block">
+                  <p>The financial shift had emotional dimensions too. Incarcerated people described the shame of asking family to fund their calls — a shame that evaporated overnight. When the cost disappeared, so did a persistent source of guilt on both sides of the line.</p>
+                </div>
+                <div class="editorial-video-block">
+                  <div class="accordion-video video-treatment-2">
+                    <div class="video-placeholder">
+                      <div class="video-placeholder-bg"></div>
+                      <div class="video-play-btn"></div>
+                      <div class="video-duration">1:08</div>
+                    </div>
+                  </div>
+                  <p class="video-caption">$622.5 million back in families' hands</p>
+                </div>
               </div>
             </div>
-          </div>
         </div>
       </div>
 
@@ -1918,38 +2194,48 @@ footer {
         </button>
         <div class="accordion-content">
           <div class="accordion-body">
-            <div class="accordion-grid">
-              <div class="accordion-text">
-                <p>
-                  Free communication creates a fundamental shift from transactional to
-                  relational. When the constant calculation — whether connection is worth
-                  the cost — disappears, conversations become truly meaningful rather than
-                  rushed and rationed. People are able to participate in family celebrations,
-                  offer guidance through difficult moments, and maintain the emotional fabric
-                  that incarceration strains.
-                </p>
-                <div class="highlight-stat">
-                  93% of incarcerated people
-                  <span>and 82% of family members, and 40% of correctional staff identified building and repairing relationships as a major impact of free calls</span>
+                        <div class="editorial-grid">
+              <!-- Row A: intro text | stat -->
+              <div class="editorial-row row-a">
+                <div class="editorial-text-block">
+                  <p>Free communication creates a fundamental shift from transactional to relational. When the constant calculation — whether connection is worth the cost — disappears, conversations become something else entirely. People sit on the phone while a child does homework, share prayer, watch movies together, listen to each other do the dishes.</p>
                 </div>
-                <p>
-                  These slower, more conversational talks serve as a source of healing and
-                  hope — providing the kind of presence that sustains people through the
-                  hardships of separation.</p>
-                                <blockquote class="accordion-quote"><p>"Those free phone calls keep me in constant contact with her. I would call her like every six months before that because our call was 20-something dollars. She always looked forward to hearing my voice."</p><cite>— Gregory Pierre, Currently incarcerated, Connecticut</cite></blockquote>
-              </div>
-              <div>
-                <div class="accordion-video video-treatment-3">
-                  <div class="video-placeholder">
-                    <div class="video-placeholder-bg"></div>
-                    <div class="video-play-btn"></div>
-                    <div class="video-duration">1:15</div>
+                <div class="editorial-stat-block">
+                  <div class="editorial-stat">
+                    <div class="editorial-stat-number">93%</div>
+                    <div class="editorial-stat-label">of incarcerated people and 82% of family members said free calls helped build or repair relationships — the most common theme across the entire interview dataset</div>
                   </div>
                 </div>
-                <p class="video-caption">Family &amp; Community — Short documentary</p>
+              </div>
+              <!-- Row B: quote | body text -->
+              <div class="editorial-row row-b">
+                <div class="editorial-quote-block">
+                  <blockquote class="editorial-quote">
+                    <p>Any loved one or family member is doing the sentence together. I need to feel [my husband] in my life, so that there is hope.</p>
+                    <cite>— Brashari, Wife of an incarcerated man, Massachusetts</cite>
+                  </blockquote>
+                </div>
+                <div class="editorial-text-block">
+                  <p>Participants described rekindling relationships that had broken — sometimes after years of silence. Hearing a daughter's voice for the first time in a decade. Meeting grandchildren. Being present for a birthday surprise over the phone.</p>
+                </div>
+              </div>
+              <!-- Row C: body text | video -->
+              <div class="editorial-row row-c">
+                <div class="editorial-text-block">
+                  <p>These connections don't just sustain people through incarceration. They are the foundation on which successful return home is built — the relationships that incarcerated people will rely on after release to navigate housing, employment, and belonging.</p>
+                </div>
+                <div class="editorial-video-block">
+                  <div class="accordion-video video-treatment-3">
+                    <div class="video-placeholder">
+                      <div class="video-placeholder-bg"></div>
+                      <div class="video-play-btn"></div>
+                      <div class="video-duration">1:15</div>
+                    </div>
+                  </div>
+                  <p class="video-caption">When the clock stops, real conversation begins</p>
+                </div>
               </div>
             </div>
-          </div>
         </div>
       </div>
 
@@ -1964,84 +2250,104 @@ footer {
         </button>
         <div class="accordion-content">
           <div class="accordion-body">
-            <div class="accordion-grid">
-              <div class="accordion-text">
-                <p>
-                  For children with incarcerated parents, phone calls are not a luxury — they
-                  are a necessity for healthy development and emotional security. When calls
-                  were costly, children experienced forced disconnection at critical moments
-                  in their lives. Free communications allow incarcerated parents to participate
-                  in homework help, school events, and daily check-ins that sustain the
-                  parental bond.
-                </p>
-                <div class="highlight-stat">
-                  Daily contact restored
-                  <span>Incarcerated parents can now speak with their children every day, not just when finances allow</span>
+                        <div class="editorial-grid">
+              <!-- Row A: intro text | stat -->
+              <div class="editorial-row row-a">
+                <div class="editorial-text-block">
+                  <p>For children with incarcerated parents, phone calls are not a luxury — they are a necessity for healthy development and emotional security. When calls were costly, parents missed the small, consistent moments that build trust: waking children up, checking in before school, helping with homework, saying goodnight.</p>
                 </div>
-                <p>
-                  The ability to maintain consistent parental presence — even across prison
-                  walls — has measurable impacts on child development, school performance,
-                  and the child's sense of security and belonging.</p>
-                                <blockquote class="accordion-quote"><p>"I remember calling my daughter so early in the morning that she wouldn't talk. She would wake up, pick up the phone and say, mm-hmm. What the phone is — it's me there. It's my presence. It's her having her father."</p><cite>— Michael Tineo, Currently incarcerated, New York</cite></blockquote>
-              </div>
-              <div>
-                <div class="accordion-video video-treatment-4">
-                  <div class="video-placeholder">
-                    <div class="video-placeholder-bg"></div>
-                    <div class="video-play-btn"></div>
-                    <div class="video-duration">1:04</div>
+                <div class="editorial-stat-block">
+                  <div class="editorial-stat">
+                    <div class="editorial-stat-number">Nearly half</div>
+                    <div class="editorial-stat-label">of people in state prisons are parents to minor children — 19% with children four years old or younger</div>
                   </div>
                 </div>
-                <p class="video-caption">Parenting &amp; Child Development — Short documentary</p>
+              </div>
+              <!-- Row B: quote | body text -->
+              <div class="editorial-row row-b">
+                <div class="editorial-quote-block">
+                  <blockquote class="editorial-quote">
+                    <p>You can't force a child to say what's going on in 30 minutes. But you can hear if your child is going through something by the tone of their voice. With free phone calls, if she has something going on, she can talk to me.</p>
+                    <cite>— Natavia, Currently incarcerated, New York</cite>
+                  </blockquote>
+                </div>
+                <div class="editorial-text-block">
+                  <p>Free communication restored those moments. Parents describe children running to the phone, eagerly anticipating calls, opening up in ways that shorter, rationed conversations never allowed. For children with disabilities, the impact was especially significant — consistent daily contact produced measurable developmental gains.</p>
+                </div>
+              </div>
+              <!-- Row C: body text | video -->
+              <div class="editorial-row row-c">
+                <div class="editorial-text-block">
+                  <p>These effects help mitigate the intergenerational harm of parental incarceration in concrete, documented ways. Research shows that stronger parent-child relationships during incarceration improve outcomes for impacted children — and the generations that come after.</p>
+                </div>
+                <div class="editorial-video-block">
+                  <div class="accordion-video video-treatment-4">
+                    <div class="video-placeholder">
+                      <div class="video-placeholder-bg"></div>
+                      <div class="video-play-btn"></div>
+                      <div class="video-duration">1:04</div>
+                    </div>
+                  </div>
+                  <p class="video-caption">What it means to raise a child over the phone</p>
+                </div>
               </div>
             </div>
-          </div>
         </div>
       </div>
 
-      <!-- 5. Rehabilitation -->
+      <!-- 5. Improved Mental & Physical Health -->
       <div class="accordion-item">
         <button class="accordion-trigger" aria-expanded="false">
           <div class="accordion-trigger-left">
             <span class="accordion-number">05</span>
-            <span class="accordion-title">Rehabilitation</span>
+            <span class="accordion-title">Improved Mental &amp; Physical Health</span>
           </div>
           <div class="accordion-icon"><span class="accordion-icon-bar"></span></div>
         </button>
         <div class="accordion-content">
           <div class="accordion-body">
-            <div class="accordion-grid">
-              <div class="accordion-text">
-                <p>
-                  Free communication serves as a powerful rehabilitation tool. When
-                  incarcerated people maintain consistent contact with loved ones, they
-                  experience greater motivation to participate in educational and
-                  self-improvement programs. Hope itself becomes a catalyst for change —
-                  knowing there is a support network waiting creates tangible accountability.
-                </p>
-                <div class="highlight-stat">
-                  Higher program engagement
-                  <span>Maintained family connections correlate with increased participation in education and vocational programs</span>
+                        <div class="editorial-grid">
+              <!-- Row A: intro text | stat -->
+              <div class="editorial-row row-a">
+                <div class="editorial-text-block">
+                  <p>Prisons and jails are isolating by design. Incarcerated people cut off from their families experience higher rates of depression, anxiety, and deteriorating physical health. Free communication functions as a lifeline — providing the human connection that is protective against the psychological toll of incarceration.</p>
                 </div>
-                <p>
-                  The ability to share achievements and personal growth with loved ones in
-                  real time reinforces positive changes and creates the kind of motivation
-                  that sustains transformation over years of incarceration.
-                </p>
-                                <blockquote class="accordion-quote"><p>"Conversations create a pathway for empathy and healing and just a healthy relationship with my family — and actually, just hope for a future when I get out. Knowing that I have people that I can go to. Without these phone calls, that would not have been possible."</p><cite>— Jasmeil, Currently incarcerated, California</cite></blockquote>
-              </div>
-              <div>
-                <div class="accordion-video video-treatment-5">
-                  <div class="video-placeholder">
-                    <div class="video-placeholder-bg"></div>
-                    <div class="video-play-btn"></div>
-                    <div class="video-duration">1:10</div>
+                <div class="editorial-stat-block">
+                  <div class="editorial-stat">
+                    <div class="editorial-stat-number">76%</div>
+                    <div class="editorial-stat-label">of incarcerated people, 77% of family members, and 100% of correctional staff described improvements in stress, emotional stability, or overall wellbeing once calls became free</div>
                   </div>
                 </div>
-                <p class="video-caption">Rehabilitation — Short documentary</p>
+              </div>
+              <!-- Row B: quote | body text -->
+              <div class="editorial-row row-b">
+                <div class="editorial-quote-block">
+                  <blockquote class="editorial-quote">
+                    <p>Without the free phone calls, all your connections are cut off. You are literally isolated from everything. You get a sense of hope when you can still interact with people on the outside and see there's people out there that care about you.</p>
+                    <cite>— Robert, Formerly incarcerated, California</cite>
+                  </blockquote>
+                </div>
+                <div class="editorial-text-block">
+                  <p>Participants described being able to grieve alongside loved ones, process difficult news in real time, and regulate emotion simply by having someone to call. The benefits extend to families on the outside, who experience relief from both the financial and emotional strain of rationed contact.</p>
+                </div>
+              </div>
+              <!-- Row C: body text | video -->
+              <div class="editorial-row row-c">
+                <div class="editorial-text-block">
+                  <p>Inside facilities, individual improvements in mental health ripple outward — a calmer person is a safer person. Free communication also opened an unexpected medical channel: when incarcerated people couldn't get adequate attention from correctional staff, loved ones could call the facility and escalate concerns on their behalf.</p>
+                </div>
+                <div class="editorial-video-block">
+                  <div class="accordion-video video-treatment-5">
+                    <div class="video-placeholder">
+                      <div class="video-placeholder-bg"></div>
+                      <div class="video-play-btn"></div>
+                      <div class="video-duration">1:09</div>
+                    </div>
+                  </div>
+                  <p class="video-caption">Connection as medicine</p>
+                </div>
               </div>
             </div>
-          </div>
         </div>
       </div>
 
@@ -2056,87 +2362,104 @@ footer {
         </button>
         <div class="accordion-content">
           <div class="accordion-body">
-            <div class="accordion-grid">
-              <div class="accordion-text">
-                <p>
-                  Facilities that have implemented free calling consistently report
-                  reductions in violent incidents and disciplinary infractions. Both staff
-                  and incarcerated people describe the change as immediate and palpable.
-                  When people have something to protect — a call with their child, a
-                  conversation with a partner — behavior changes. Seventy-nine percent of incarcerated people described positive changes in the prison environment, and 23% of family members reported hearing from loved ones that free calls had a calming effect inside facilities.
-                </p>
-                <div class="highlight-stat">
-                  100% of corrections staff
-                  <span>interviewed described free calls as reducing tension and making their jobs easier</span>
+                        <div class="editorial-grid">
+              <!-- Row A: intro text | stat -->
+              <div class="editorial-row row-a">
+                <div class="editorial-text-block">
+                  <p>Phones have long been the most volatile pressure point inside correctional facilities — the place where people receive the best and worst news, where financial scarcity and emotional charge collide. Before free calling, participants described long lines, bullying over phone access, and conversations cut short by cost, sending people back into shared living spaces still carrying unresolved stress.</p>
                 </div>
-                <p>
-                  The ability to talk to families reduces the stress and isolation that
-                  fuels violence. When people are no longer desperate about maintaining
-                  costly connections, they are less likely to engage in the behaviors that
-                  lead to disciplinary infractions — creating safer environments for
-                  everyone, including correctional officers.
-                </p>
-                                <blockquote class="accordion-quote"><p>"It's helping to keep them calm and keeping them level-headed, a little grounded. Even if it's not always good news, at least they know almost immediately what's going on with their families."</p><cite>— Officer Walls, Corrections Officer, Connecticut</cite></blockquote>
-              </div>
-              <div>
-                <div class="accordion-video video-treatment-6">
-                  <div class="video-placeholder">
-                    <div class="video-placeholder-bg"></div>
-                    <div class="video-play-btn"></div>
-                    <div class="video-duration">1:06</div>
+                <div class="editorial-stat-block">
+                  <div class="editorial-stat">
+                    <div class="editorial-stat-number">100%</div>
+                    <div class="editorial-stat-label">of corrections staff interviewed described free calls as a security tool that reduced tensions and made their jobs easier</div>
                   </div>
                 </div>
-                <p class="video-caption">Reduced Violence — Short documentary</p>
+              </div>
+              <!-- Row B: quote | body text -->
+              <div class="editorial-row row-b">
+                <div class="editorial-quote-block">
+                  <blockquote class="editorial-quote">
+                    <p>When they're having a good day, we're having a good day.</p>
+                    <cite>— Officer Walls, Corrections Officer, New York</cite>
+                  </blockquote>
+                </div>
+                <div class="editorial-text-block">
+                  <p>Free communication and personal tablets removed the scarcity that drove that conflict. Seventy-nine percent of incarcerated people described positive changes in the prison environment. Research supports this: expanded communication is associated with a 27% reduction in disciplinary infractions and roughly a 20% reduction in violent incidents.</p>
+                </div>
+              </div>
+              <!-- Row C: body text | video -->
+              <div class="editorial-row row-c">
+                <div class="editorial-text-block">
+                  <p>Correctional staff, incarcerated people, and family members alike used the same word: calmer. With fewer conflicts and increased support from loved ones in navigating emotionally charged situations, disciplinary infractions dropped — and with them, barriers to early release.</p>
+                </div>
+                <div class="editorial-video-block">
+                  <div class="accordion-video video-treatment-6">
+                    <div class="video-placeholder">
+                      <div class="video-placeholder-bg"></div>
+                      <div class="video-play-btn"></div>
+                      <div class="video-duration">1:06</div>
+                    </div>
+                  </div>
+                  <p class="video-caption">A phone call as a security tool</p>
+                </div>
               </div>
             </div>
-          </div>
         </div>
       </div>
 
-      <!-- 7. Mental & Physical Health -->
+      <!-- 7. Rehabilitation -->
       <div class="accordion-item">
         <button class="accordion-trigger" aria-expanded="false">
           <div class="accordion-trigger-left">
             <span class="accordion-number">07</span>
-            <span class="accordion-title">Improved Mental &amp; Physical Health</span>
+            <span class="accordion-title">Rehabilitation</span>
           </div>
           <div class="accordion-icon"><span class="accordion-icon-bar"></span></div>
         </button>
         <div class="accordion-content">
           <div class="accordion-body">
-            <div class="accordion-grid">
-              <div class="accordion-text">
-                <p>
-                  Isolation is a health crisis. Incarcerated people cut off from their
-                  families experience higher rates of depression, anxiety, and physical
-                  health deterioration. Free communication functions as a lifeline —
-                  providing the kind of human connection that is protective against
-                  the psychological toll of incarceration.
-                </p>
-                <div class="highlight-stat">
-                  76% of incarcerated people
-                  <span>77% of family members, and 100% of staff described emotional and mental health improvements from free calls</span>
+                        <div class="editorial-grid">
+              <!-- Row A: intro text | stat -->
+              <div class="editorial-row row-a">
+                <div class="editorial-text-block">
+                  <p>Free communication doesn't replace rehabilitation programs — it activates them. When incarcerated people maintain consistent contact with loved ones, they regain a sense of identity and responsibility that motivates genuine engagement in their own growth. Hope is not abstract. It comes from specific people who are waiting.</p>
                 </div>
-                <p>
-                  The mental health benefits extend to families as well, who experience
-                  relief from the constant financial and emotional strain of maintaining
-                  connections. Physical health also improves through reduced violence
-                  exposure and lower stress-related illness.
-                </p>
-                                <blockquote class="accordion-quote"><p>"And sometimes I just needed to cry. I needed somebody to fill me up. I needed somebody to give me inspiration and guide me."</p><cite>— Yannick Ortega, Formerly incarcerated, California</cite></blockquote>
-              </div>
-              <div>
-                <div class="accordion-video video-treatment-7">
-                  <div class="video-placeholder">
-                    <div class="video-placeholder-bg"></div>
-                    <div class="video-play-btn"></div>
-                    <div class="video-duration">1:09</div>
+                <div class="editorial-stat-block">
+                  <div class="editorial-stat">
+                    <div class="editorial-stat-number">Connection</div>
+                    <div class="editorial-stat-label">as the root of rehabilitation — maintained family ties correlate with reduced disciplinary infractions, increased program engagement, and earlier release</div>
                   </div>
                 </div>
-                <p class="video-caption">Mental &amp; Physical Health — Short documentary</p>
+              </div>
+              <!-- Row B: quote | body text -->
+              <div class="editorial-row row-b">
+                <div class="editorial-quote-block">
+                  <blockquote class="editorial-quote">
+                    <p>Conversations create a pathway for empathy and healing — and actually, just hope for a future when I get out. Knowing that I have people that I can go to. Without these phone calls, that would not have been possible.</p>
+                    <cite>— Jasmeil, Currently incarcerated, California</cite>
+                  </blockquote>
+                </div>
+                <div class="editorial-text-block">
+                  <p>Participants describe a measurable internal shift: a reason to exercise, to enroll in programs, to stay out of trouble. Fewer disciplinary infractions often directly affect parole eligibility. The civic ties sustained through free calls — to faith communities, advocacy networks, and mutual aid — lay groundwork for reintegration before release ever happens.</p>
+                </div>
+              </div>
+              <!-- Row C: body text | video -->
+              <div class="editorial-row row-c">
+                <div class="editorial-text-block">
+                  <p>As the report puts it: these connections are not separate from rehabilitation. They may be the root of it. Maintaining community ties, contributing to shared efforts, and staying engaged in collective life reinforce the habits, relationships, and sense of purpose that support long-term change.</p>
+                </div>
+                <div class="editorial-video-block">
+                  <div class="accordion-video video-treatment-7">
+                    <div class="video-placeholder">
+                      <div class="video-placeholder-bg"></div>
+                      <div class="video-play-btn"></div>
+                      <div class="video-duration">1:10</div>
+                    </div>
+                  </div>
+                  <p class="video-caption">Hope has a phone number</p>
+                </div>
               </div>
             </div>
-          </div>
         </div>
       </div>
 
@@ -2151,40 +2474,48 @@ footer {
         </button>
         <div class="accordion-content">
           <div class="accordion-body">
-            <div class="accordion-grid">
-              <div class="accordion-text">
-                <p>
-                  People who maintain strong family connections during incarceration
-                  are far more likely to have stable housing, employment, and support
-                  upon release. Free communication allows reentry planning to begin
-                  before the prison door opens — securing housing, arranging employment,
-                  and maintaining relationships with mentors and family members who will
-                  support the transition home.
-                </p>
-                <div class="highlight-stat">
-                  Stronger networks
-                  <span>Maintained connections are the leading predictor of successful reentry and reduced recidivism</span>
+                        <div class="editorial-grid">
+              <!-- Row A: intro text | stat -->
+              <div class="editorial-row row-a">
+                <div class="editorial-text-block">
+                  <p>Reentry is daunting. Formerly incarcerated people face homelessness at nearly 10 times the general population rate and unemployment above 27%. Overburdened case managers cannot close that gap alone. What research consistently shows is that strong, sustained community ties are among the most powerful predictors of successful return.</p>
                 </div>
-                <p>
-                  The bonds built through consistent, free communication during
-                  incarceration become the foundation for successful community
-                  reintegration — turning the moment of release from a crisis
-                  into a homecoming.
-                </p>
-                                <blockquote class="accordion-quote"><p>"I was able to call social services, call the program to help me get right into school. I got out in December — in January I was in school. All of that was possible because we didn't have to pay for the phone."</p><cite>— Donald Diggs, Formerly incarcerated, Connecticut</cite></blockquote>
-              </div>
-              <div>
-                <div class="accordion-video video-treatment-8">
-                  <div class="video-placeholder">
-                    <div class="video-placeholder-bg"></div>
-                    <div class="video-play-btn"></div>
-                    <div class="video-duration">1:11</div>
+                <div class="editorial-stat-block">
+                  <div class="editorial-stat">
+                    <div class="editorial-stat-number">42%</div>
+                    <div class="editorial-stat-label">of incarcerated people spend their first free night at the home of a family member or friend — and 54% of those employed after release used personal connections to find that job</div>
                   </div>
                 </div>
-                <p class="video-caption">Reentry Planning — Short documentary</p>
+              </div>
+              <!-- Row B: quote | body text -->
+              <div class="editorial-row row-b">
+                <div class="editorial-quote-block">
+                  <blockquote class="editorial-quote">
+                    <p>I was able to call social services, call transitional housing, call the school. I got out in December, and in January, I was in school. All of that was possible because we didn't have to pay for the phone.</p>
+                    <cite>— Donald Diggs, Formerly incarcerated, California</cite>
+                  </blockquote>
+                </div>
+                <div class="editorial-text-block">
+                  <p>Free communication lets reentry planning begin before the prison door opens. Participants describe using calls to secure housing, arrange employment, enroll in education, coordinate treatment — all before release. The bonds built through consistent connection during incarceration become the foundation for reintegration.</p>
+                </div>
+              </div>
+              <!-- Row C: body text | video -->
+              <div class="editorial-row row-c">
+                <div class="editorial-text-block">
+                  <p>Successful reentry is not just a personal outcome — it is a public one. When people return home with stable housing, employment, and strong support networks, communities are safer and public systems are less burdened. Free communication is not simply a benefit to incarcerated people and their families; it is an investment in the communities they return to.</p>
+                </div>
+                <div class="editorial-video-block">
+                  <div class="accordion-video video-treatment-8">
+                    <div class="video-placeholder">
+                      <div class="video-placeholder-bg"></div>
+                      <div class="video-play-btn"></div>
+                      <div class="video-duration">1:11</div>
+                    </div>
+                  </div>
+                  <p class="video-caption">Planning for freedom, one call at a time</p>
+                </div>
               </div>
             </div>
-          </div>
         </div>
       </div>
 
@@ -2196,156 +2527,7 @@ footer {
      TAKE ACTION
      ======================================== -->
 
-<!-- ========================================
-     CASE STUDIES
-     ======================================== -->
-<section class="case-studies" id="case-studies">
-  <div class="case-studies-inner">
-    <div class="case-studies-header fade-in">
-      <div class="case-studies-label">Case Studies</div>
-      <h2 class="case-studies-title">How three states made it happen</h2>
-    </div>
 
-    <div class="case-studies-grid" id="caseStudiesGrid">
-
-      <!-- Connecticut Card -->
-      <div class="case-study-card" data-state="ct" onclick="toggleCaseStudy('ct')">
-        <div class="case-study-year">2022</div>
-        <div class="case-study-state">Connecticut</div>
-        <div class="case-study-tagline">The state that started it all</div>
-        <div class="case-study-hero-stat">
-          <div class="case-study-hero-number">163%</div>
-          <div class="case-study-hero-label">increase in monthly call minutes</div>
-        </div>
-        <div class="case-study-cta">Read the story <span class="case-study-cta-arrow">→</span></div>
-      </div>
-
-      <!-- California Card -->
-      <div class="case-study-card" data-state="ca" onclick="toggleCaseStudy('ca')">
-        <div class="case-study-year">2023</div>
-        <div class="case-study-state">California</div>
-        <div class="case-study-tagline">From local wins to statewide change</div>
-        <div class="case-study-hero-stat">
-          <div class="case-study-hero-number">200%</div>
-          <div class="case-study-hero-label">increase in monthly call minutes</div>
-        </div>
-        <div class="case-study-cta">Read the story <span class="case-study-cta-arrow">→</span></div>
-      </div>
-
-      <!-- New York Card -->
-      <div class="case-study-card" data-state="ny" onclick="toggleCaseStudy('ny')">
-        <div class="case-study-year">2025</div>
-        <div class="case-study-state">New York</div>
-        <div class="case-study-tagline">The administrative model</div>
-        <div class="case-study-hero-stat">
-          <div class="case-study-hero-number">$26.2M</div>
-          <div class="case-study-hero-label">saved by families per year</div>
-        </div>
-        <div class="case-study-cta">Read the story <span class="case-study-cta-arrow">→</span></div>
-      </div>
-
-      <!-- Connecticut Expanded -->
-      <div class="case-study-expanded" id="detail-ct">
-        <div class="case-study-expanded-header">
-          <div>
-            <div class="case-study-expanded-title">
-              <div class="case-study-expanded-state">Connecticut</div>
-              <div class="case-study-expanded-year">2022</div>
-            </div>
-            <div class="case-study-tagline-expanded">The state that started it all</div>
-          </div>
-          <button class="case-study-close-btn" onclick="toggleCaseStudy('ct')">&times;</button>
-        </div>
-        <div class="case-study-expanded-stats">
-          <div class="case-study-expanded-stat">
-            <div class="case-study-expanded-stat-number">163%</div>
-            <div class="case-study-expanded-stat-label">increase in monthly call minutes</div>
-          </div>
-          <div class="case-study-expanded-stat">
-            <div class="case-study-expanded-stat-number">$15.6M</div>
-            <div class="case-study-expanded-stat-label">saved by families per year</div>
-          </div>
-          <div class="case-study-expanded-stat">
-            <div class="case-study-expanded-stat-number">91%</div>
-            <div class="case-study-expanded-stat-label">reduction in cost per minute</div>
-          </div>
-        </div>
-        <div class="case-study-expanded-narrative">
-          <p>Connecticut became the first state in the country to make all prison and jail communication free — including phone calls, video calls, and electronic messaging — when Senate Bill 972 took effect in July 2022. The policy affects more than 10,000 incarcerated people and guarantees a minimum of 90 minutes of call time per day.</p>
-          <p>The state renegotiated its contract with Securus, moving to a per-person pricing model that dropped the effective rate from 25.8 cents to 2.3 cents per minute — the largest cost reduction of any state studied.</p>
-          <p>The victory followed years of organizing by Worth Rises and the Connecting Families Connecticut coalition, championed in the legislature by State Representative Josh Elliott and powered by directly impacted families like Diane Lewis, who became one of the campaign's most powerful advocates.</p>
-        </div>
-      </div>
-
-      <!-- California Expanded -->
-      <div class="case-study-expanded" id="detail-ca">
-        <div class="case-study-expanded-header">
-          <div>
-            <div class="case-study-expanded-title">
-              <div class="case-study-expanded-state">California</div>
-              <div class="case-study-expanded-year">2023</div>
-            </div>
-            <div class="case-study-tagline-expanded">From local wins to statewide change</div>
-          </div>
-          <button class="case-study-close-btn" onclick="toggleCaseStudy('ca')">&times;</button>
-        </div>
-        <div class="case-study-expanded-stats">
-          <div class="case-study-expanded-stat">
-            <div class="case-study-expanded-stat-number">200%</div>
-            <div class="case-study-expanded-stat-label">increase in monthly call minutes</div>
-          </div>
-          <div class="case-study-expanded-stat">
-            <div class="case-study-expanded-stat-number">$16.1M</div>
-            <div class="case-study-expanded-stat-label">saved by families per year</div>
-          </div>
-          <div class="case-study-expanded-stat">
-            <div class="case-study-expanded-stat-number">90K+</div>
-            <div class="case-study-expanded-stat-label">incarcerated people affected</div>
-          </div>
-        </div>
-        <div class="case-study-expanded-narrative">
-          <p>California's Keep Families Connected Act made phone calls free across all state prisons and youth detention facilities starting January 1, 2023. The policy built on earlier victories in San Francisco, San Diego, and Los Angeles, where local advocates had already eliminated jail call costs.</p>
-          <p>The state renegotiated its contract with ViaPath and introduced calling-enabled tablets system-wide, securing a volume discount that brought the per-minute cost down to as low as 1.9 cents. Average monthly call minutes tripled — from 41.6 million to 125.0 million — and average daily usage per person rose from 14 to 44 minutes.</p>
-          <p>Worth Rises and the Keep Families Connected coalition, including the San Francisco Financial Justice Project, Essie Justice Group, and Young Women's Freedom Center, built steady pressure that brought the bill across the finish line with legislative champion State Senator Josh Becker.</p>
-        </div>
-      </div>
-
-      <!-- New York Expanded -->
-      <div class="case-study-expanded" id="detail-ny">
-        <div class="case-study-expanded-header">
-          <div>
-            <div class="case-study-expanded-title">
-              <div class="case-study-expanded-state">New York</div>
-              <div class="case-study-expanded-year">2025</div>
-            </div>
-            <div class="case-study-tagline-expanded">The administrative model</div>
-          </div>
-          <button class="case-study-close-btn" onclick="toggleCaseStudy('ny')">&times;</button>
-        </div>
-        <div class="case-study-expanded-stats">
-          <div class="case-study-expanded-stat">
-            <div class="case-study-expanded-stat-number">$26.2M</div>
-            <div class="case-study-expanded-stat-label">saved by families per year</div>
-          </div>
-          <div class="case-study-expanded-stat">
-            <div class="case-study-expanded-stat-number">1.5¢</div>
-            <div class="case-study-expanded-stat-label">per minute — lowest rate in the country</div>
-          </div>
-          <div class="case-study-expanded-stat">
-            <div class="case-study-expanded-stat-number">30K+</div>
-            <div class="case-study-expanded-stat-label">incarcerated people affected</div>
-          </div>
-        </div>
-        <div class="case-study-expanded-narrative">
-          <p>New York took a different path. Rather than waiting for legislation, the Department of Corrections and Community Supervision made all state prison calls free administratively — incorporating communication costs directly into the corrections budget. The policy took effect August 1, 2025, going from decision to implementation in days rather than months.</p>
-          <p>The state negotiated the lowest per-minute rate in the country at just 1.5 cents — well below federal rate caps and comparable policies in other states. Every person in New York state prisons now has their own tablet for making calls, with no limits on usage. Average daily call minutes per person rose from 64 to 88, the highest sustained level observed in any system studied.</p>
-          <p>The administrative approach offers a model for states where the legislative process has proven slow or politically difficult. Worth Rises spearheaded the campaign with leaders including Assembly Speaker Carl Heastie, Assembly Member Harvey Epstein, and State Senator Jamaal T. Bailey.</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
 
 <section class="action" id="action">
   <div class="action-inner">
@@ -2565,40 +2747,6 @@ fadeEls.forEach(el => observer.observe(el));
   // Start
   startAutoplay();
 })();
-
-  // Case Studies Toggle
-  let activeCaseStudy = null;
-
-  function toggleCaseStudy(state) {
-    const grid = document.getElementById('caseStudiesGrid');
-    const cards = document.querySelectorAll('.case-study-card');
-    const details = document.querySelectorAll('.case-study-expanded');
-
-    // If clicking the already-active card, close it
-    if (activeCaseStudy === state) {
-      details.forEach(d => d.classList.remove('visible'));
-      cards.forEach(c => c.classList.remove('active'));
-      activeCaseStudy = null;
-      return;
-    }
-
-    // Close all first
-    details.forEach(d => d.classList.remove('visible'));
-    cards.forEach(c => c.classList.remove('active'));
-
-    // Open the clicked one
-    const detail = document.getElementById('detail-' + state);
-    const card = document.querySelector('.case-study-card[data-state="' + state + '"]');
-
-    detail.classList.add('visible');
-    card.classList.add('active');
-    activeCaseStudy = state;
-
-    // Smooth scroll to it
-    setTimeout(() => {
-      detail.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    }, 100);
-  }
 
 </script>
 
